@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h1>Music Survey</h1>
+		<form id="Music-Survey" method="POST" action="script.php">
+			<ul>
+				<li><label for="name">Name:</label></li>
+				<li><input type="text" id="name" name="name" /></li>
+				<li><label for="email">Email:</label></li>
+				<li><input type="email" id="email" name="email" placeholder="joe.bloggs" /></li>
+				<li>
+					<fieldset>
+						<legend>Select your favourite music</legend>
+						<ul>
+							<li><input type="checkbox" name="fav" value="pop"/>Pop</li>
+						</ul>
+					</fieldset>
+				</li>
+				<li><select name="locations">
+				<option value = "car">In the car</option>
+				<option value = "home">At home</option>
+				</select>
+				</li>
+				<li>
+				<input type="submit"><input type="reset">
+				</li>
+			</ul>
+		</form>
+	</body>
+</html>
