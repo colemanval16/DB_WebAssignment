@@ -6,6 +6,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
 
+
+           <!-- PLACEHOLDER FOR THE SLIDESHOW -->
+	<div style="height: 400px;"></div>
+
+
+
     <div class="container marketing">
         <div class="row">
             <div class="col-lg-4">
