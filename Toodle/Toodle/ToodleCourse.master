@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="ToodleCourse.master.cs" Inherits="Toodle.ToodleCourse" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Slider" runat="server">
+    </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">       
+    </asp:ContentPlaceHolder>
+    <div>
+        <asp:Menu ID="mnuExample" runat="server" Orientation="Horizontal" OnMenuItemClick="mnuExample_MenuItemClick" CssClass="tabs">
+
+            <Items>
+                <asp:MenuItem Text="Content" Value="0" ></asp:MenuItem>
+                <asp:MenuItem Text="Revision" Value="1"></asp:MenuItem>
+                <asp:MenuItem Text="Test" Value="2"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <div style="width: 600px; min-height:500px; background-color: #9D9D9D;">                                                                                           
+        <asp:MultiView ID="mvTabs" runat="server" ActiveViewIndex="0">
+            <asp:View ID="View1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- Editable content of tab 1 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="View2" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    <!-- Editable content of tab 2 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="View3" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                    <!-- Editable content of tab 3 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+        </asp:MultiView>
+        </div>
+    </div>
+</asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Toodle.Master.cs" Inherits="Toodle.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Toodle.Master.cs" EnableTheming="true"  Inherits="Toodle.Site1" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,8 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="App_Themes/Main/carousel.css" rel="stylesheet"/>
+    <link href="App_Themes/Main/carousel.css" rel="stylesheet" />
+    <link href="App_Themes/Main/base.css" rel="stylesheet"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -66,15 +67,20 @@
                 </div>
               </div>
             </nav>
+            <div>
+                <asp:ContentPlaceHolder ID="Slider" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+              <div class="container">
+                  <asp:ContentPlaceHolder ID="Content" runat="server">
 
+                  </asp:ContentPlaceHolder>
+              </div>
           </div>
         </div>
 
-        <div>
-            <asp:ContentPlaceHolder ID="Content" runat="server">
-        
-            </asp:ContentPlaceHolder>
-        </div>
+
 
 
         <!-- <footer>

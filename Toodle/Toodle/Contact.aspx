@@ -8,7 +8,7 @@
 
 
            <!-- PLACEHOLDER FOR THE SLIDESHOW -->
-	<div style="height: 400px;"></div>
+	<div style="height: 200px;"></div>
 
 
 
