@@ -11,13 +11,13 @@ a:hover, a:active, a:focus {
     background-color:    #D4D4D4;
     padding:            7px 15px !important;
     margin-top:         4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 4px; /* rounding corners of tab head */
+    border-top-right-radius: 4px; /* rounding corners of tab head */
     color:              #5A5A5A;
     margin-right:       1px;
 }
 
- ul li a.selected{
+ ul li a.static.selected{
      background-color:  #9D9D9D;
      padding:           9px 15px !important;
      margin-top:        0px;
@@ -29,6 +29,53 @@ a:hover, a:active, a:focus {
      margin-top:        0px;
     }
 
+ #multiTabs{
+    min-height:         500px; 
+    background-color:   #9D9D9D;
+    padding:            4%;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+/* different style tabs  - comment whole block below to see tabs monochromatic */
+.tabs ul li a{
+    background-color:    rgb(92, 168, 92);
+    padding:            7px 15px !important;
+    margin-top:         6px;
+    border-top-left-radius: 4px; /* rounding corners of tab head */
+    border-top-right-radius: 4px; /* rounding corners of tab head */
+    color:              white;
+    margin-right:       1px;
+}
+
+ ul li a.static.selected{
+     background-color:  white;
+     padding:           9px 15px !important;
+     margin-top:        0px;
+     color:             rgb(63, 156, 21);
+     border:            solid thin #8CF26D;
+     border-bottom:     solid white 1px;
+     position:          relative;
+     top:               1px;
+    }
+ ul li a.highlighted{
+     background-color:  #A1F6A1;
+     padding:           9px 15px !important;
+     margin-top:        2px;
+    }
+
+ #multiTabs{
+    min-height:         500px; 
+    background-color:   white;
+    padding:            4%;
+    border:             solid thin #8CF26D;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+ /* end for - different style tabs */
+ /*-----------------------------------------------------------------------------------*/
+
 #wrapper {
     width:              100%;
 }
@@ -39,13 +86,7 @@ a:hover, a:active, a:focus {
     left:               0%;
     z-index:            10;
 }
-#multiTabs{
-    min-height:         500px; 
-    background-color:   #9D9D9D;
-    padding:            4%;
 
-
-}
  
 /* Small devices, 768px and up */
 @media (min-width: 768px) {
@@ -76,7 +117,7 @@ a:hover, a:active, a:focus {
 @media (min-width: 1200px) {
 
 #wrapper {
-    width:              90%;  
+    width:              86%;  
 }
 .navbar-wrapper {
     right:              9%;
