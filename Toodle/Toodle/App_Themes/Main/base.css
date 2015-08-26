@@ -1,21 +1,86 @@
-﻿body{
+﻿/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+a:hover, a:active, a:focus {
+   outline:             0;
 }
-.pos_center{
-	text-align: center;
+.posCenter{
+	text-align:         center;
 }
 .tabs ul li a{
-    background-color: #D4D4D4;
-    padding: 7px 15px !important;
-    margin-top:4px;
+    background-color:    #D4D4D4;
+    padding:            7px 15px !important;
+    margin-top:         4px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    color: #5A5A5A;
-    margin-right: 1px;
+    color:              #5A5A5A;
+    margin-right:       1px;
 }
 
-.tabSelected ul li a:active{
-     background-color: #9D9D9D;
-     padding: 9px 15px !important;
-     margin-top: 0px;
+ ul li a.selected{
+     background-color:  #9D9D9D;
+     padding:           9px 15px !important;
+     margin-top:        0px;
+     color:             white;
+    }
+ ul li a.highlighted{
+     background-color:  #CFCFCF;
+     padding:           9px 15px !important;
+     margin-top:        0px;
     }
 
+#wrapper {
+    width:              100%;
+}
+
+.navbar-wrapper {
+    position:           fixed;
+    right:              0%;
+    left:               0%;
+    z-index:            10;
+}
+#multiTabs{
+    min-height:         500px; 
+    background-color:   #9D9D9D;
+    padding:            4%;
+
+
+}
+ 
+/* Small devices, 768px and up */
+@media (min-width: 768px) {
+
+.navbar-wrapper {
+    margin-top:         20px;  /* Detaching navbar from the top */
+}
+.navbar {
+    border-radius:      4px;  /* rounding corners of the navbar */
+  }
+        
+}
+
+/* Medium devices, 992px and up */
+@media (min-width: 992px) {
+
+#wrapper {
+    width:              92%;   
+}
+.navbar-wrapper {
+    right:              5%;
+    left:               5%;
+}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+#wrapper {
+    width:              90%;  
+}
+.navbar-wrapper {
+    right:              9%;
+    left:               9%;
+}
+
+}

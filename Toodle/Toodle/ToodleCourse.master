@@ -11,7 +11,12 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">       
     </asp:ContentPlaceHolder>
     <div>
-        <asp:Menu ID="mnuExample" runat="server" Orientation="Horizontal" OnMenuItemClick="mnuExample_MenuItemClick" CssClass="tabs">
+        <asp:Menu ID="tabbedMenu" runat="server" Orientation="Horizontal" OnMenuItemClick="tabbedMenu_MenuItemClick" CssClass="tabs">
+            
+            <StaticSelectedStyle BackColor="#9D9D9D"
+                HorizontalPadding="9px"
+                VerticalPadding="15px"
+                 ForeColor="White" />
 
             <Items>
                 <asp:MenuItem Text="Content" Value="0" ></asp:MenuItem>
@@ -19,7 +24,7 @@
                 <asp:MenuItem Text="Test" Value="2"></asp:MenuItem>
             </Items>
         </asp:Menu>
-        <div style="width: 600px; min-height:500px; background-color: #9D9D9D;">                                                                                           
+        <div id="multiTabs">                                                                                           
         <asp:MultiView ID="mvTabs" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

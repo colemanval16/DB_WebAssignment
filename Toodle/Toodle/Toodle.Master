@@ -27,20 +27,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="navbar-wrapper">
+       <div id="wrapper" class="container-fluid">
           <div class="container">
-
-            <nav class="navbar navbar-inverse navbar-static-top">
-              <div class="container">
+            <div class="navbar-wrapper">
+              <nav class="navbar navbar-inverse navbar-static-top">            
                 <div class="navbar-header">
-                <a id="#"></a>
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="Index.aspx">Toodle</a>
+                    <a id="#"></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Index.aspx">Toodle</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
@@ -62,35 +61,32 @@
                     </li>
                     <li><a href="Contact.aspx">Contact</a></li>
                     <li><a href="http://www.dbs-students.com/" target="_blank" title="DBS Student Services">DBS</a></li>
-
                   </ul>
-                </div>
-              </div>
-            </nav>
-            <div>
-                <asp:ContentPlaceHolder ID="Slider" runat="server">
+                </div> <!-- end of div "navbar-collapse collapse" -->             
+              </nav>
+            </div> <!-- end of div "navbar-wrapper" -->
+          </div> <!-- end of navbar CONTAINER -->
         
-                </asp:ContentPlaceHolder>
-            </div>
-              <div class="container">
-                  <asp:ContentPlaceHolder ID="Content" runat="server">
-
-                  </asp:ContentPlaceHolder>
-              </div>
+          <div class="slider">
+              <asp:ContentPlaceHolder ID="Slider" runat="server">
+                  <!-- Editable content of the slider/progress bar -->
+              </asp:ContentPlaceHolder>
           </div>
-        </div>
-
-
-
-
+          <div id="content" class="container-fluid">
+              <asp:ContentPlaceHolder ID="Content" runat="server">
+                  <!-- Editable content of the page main content -->
+              </asp:ContentPlaceHolder>
+        
         <!-- <footer>
-            <div class="panel-footer">
-                <div class="container">
-                    <p><a href="#">Back to top</a></p>
-                    <p></p>
+                <div class="panel-footer">
+                    <div class="container">
+                        <p><a href="#">Back to top</a></p>
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-        </footer> -->
+             </footer> -->
+          </div> <!-- end of "content container" -->
+       </div> <!-- end of wrapper/main "container" -->
     </form>
 
     <!-- Bootstrap core JavaScript
@@ -102,7 +98,5 @@
     <script src="App_Themes/Main/holder.htm"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="App_Themes/Main/ie10-viewport-bug-workaround.js"></script>
-  
-
 </body>
 </html>

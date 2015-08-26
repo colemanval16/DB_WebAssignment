@@ -11,12 +11,12 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            tabbedMenu.FindItem("0").Selected = true;
         }
 
-        protected void mnuExample_MenuItemClick(object sender, MenuEventArgs e)
+        protected void tabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
-            mvTabs.ActiveViewIndex = int.Parse(mnuExample.SelectedItem.Value);
+            mvTabs.ActiveViewIndex = int.Parse(tabbedMenu.SelectedItem.Value);
         }
     }
 }

@@ -22,13 +22,13 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder4;
         
         /// <summary>
-        /// mnuExample control.
+        /// tabbedMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu mnuExample;
+        protected global::System.Web.UI.WebControls.Menu tabbedMenu;
         
         /// <summary>
         /// mvTabs control.
