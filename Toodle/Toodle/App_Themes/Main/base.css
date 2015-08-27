@@ -89,7 +89,7 @@ a:hover, a:active, a:focus {
 
 
 ul.dropdown-menu>li>ul>li>ul {
-    display:            none;    
+    display:            none; 
 }
     
 ul.dropdown-menu>li:hover>ul {
