@@ -87,7 +87,19 @@ a:hover, a:active, a:focus {
     z-index:            10;
 }
 
- 
+
+ul.dropdown-menu>li>ul>li>ul {
+    display:            none;    
+}
+    
+ul.dropdown-menu>li:hover>ul {
+    display:            block;
+}
+.submenu {
+    left:               171px;
+    top:                -7px;
+} 
+
 /* Small devices, 768px and up */
 @media (min-width: 768px) {
 
