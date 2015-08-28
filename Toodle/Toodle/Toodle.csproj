@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
     <Content Include="App_Themes\Main\carousel.css" />
@@ -65,6 +66,7 @@
     <Content Include="App_Themes\Main\ie10-viewport-bug-workaround.js" />
     <Content Include="App_Themes\Main\jquery.js" />
     <Content Include="Contact.aspx" />
+    <Content Include="DatabaseFundamentals.aspx" />
     <Content Include="Images\contract11.png" />
     <Content Include="Images\email5.png" />
     <Content Include="Images\mtaLogo.png" />
@@ -81,6 +83,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseFundamentals.aspx.cs">
+      <DependentUpon>DatabaseFundamentals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatabaseFundamentals.aspx.designer.cs">
+      <DependentUpon>DatabaseFundamentals.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,10 +105,18 @@
     <Compile Include="Toodle.Master.designer.cs">
       <DependentUpon>Toodle.Master</DependentUpon>
     </Compile>
+    <Compile Include="ToodleCourse.master.cs">
+      <DependentUpon>ToodleCourse.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToodleCourse.master.designer.cs">
+      <DependentUpon>ToodleCourse.master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Toodle.Master" />
     <Content Include="App_Themes\Main\Main.skin" />
+    <Content Include="ToodleCourse.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,133 +4,83 @@
     <meta name="author" content="Junga Ji Kavanagh, Artur Turczyn & Valerie Coleman"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-        <li class="" data-target="#myCarousel" data-slide-to="1"></li>
-        <li class="active" data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide" />
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code>
- URL, the "next" and "previous" Glyphicon buttons on the left and right 
-might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide" />
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget 
-quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor 
-id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item active">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide" />
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget 
-quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor 
-id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
+       <!-- PLACEHOLDER FOR THE SLIDESHOW -->
+	<div style="height: 400px;"></div>
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/mtaLogo.png" alt="Generic placeholder image" height="140" width="140" />
-          <h1 style="color: #8cf26d;">MTA</h1>
-          <p>Microsoft Technology Associate (MTA) is a set of entry-level 
-		  IT certification exams offered by Microsoft. Exams are available 
-		  in three different tracks: IT infrastructure, database, and development.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/programmingLogo.png" alt="Generic placeholder image" height="140" width="140" />
-          <h1 style="color: #f26d7d;">Programming</h1>
-          <p>Series of video tutorials, code samples and exercises
-		  taht allows you to understand and master various concepts
-		  of Object Oriented Programming in C sharp and Java.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140" />
-          <h1>Web Design</h1>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis 
-			in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. 
-			Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-			ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-	  
-      <div class="row">  
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140" />
-          <h2>Database</h2>
-          <p>Microsoft Technology Associate (MTA) is a set of entry-level 
-		  IT certification exams offered by Microsoft. Exams are available 
-		  in three different tracks: IT infrastructure, database, and development.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140" />
-          <h2>Networks</h2>
-          <p>Series of video tutorials, code samples and exercises
-		  taht allows you to understand and master various concepts
-		  of Object Oriented Programming in C sharp and Java.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140" />
-          <h2>Project Management</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis 
-in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. 
-Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
- ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+	
+	<!-- short entries with the links to the courses -->
+    <div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/mtaLogo.png" alt="MTA Logo">
+				<h1 style="color: #8CF26D;">MTA</h1>
+				<p>Microsoft Technology Associate (MTA) is a set of entry-level 
+				   IT certification exams offered by Microsoft. Exams are available 
+				   in three different tracks: IT infrastructure, database, and development.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #8CF26D;">View details »</a>
+				</p>
+			</div>
+			
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/programmingLogo.png" alt="Programming Logo">
+				<h1 style="color: #F26D7D;">Programming</h1>
+				<p>Series of video tutorials, code samples and exercises
+				   taht allows you to understand and master various concepts
+				   of Object Oriented Programming in C sharp and Java.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #F26D7D;">View details »</a>
+				</p>
+			</div>
+			
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/webDesignLogo.png" alt="Web Design Logo">
+				<h1 style="color: #6DB5F2;">Web Design</h1>
+				<p>Series of video tutorials, code samples and exercises
+				   taht allows you to understand and master various concepts
+				   of Object Oriented Programming in C sharp and Java.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #6DB5F2;">View details »</a>
+				</p>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/dbLogo.png" alt="Database Logo">
+				<h2 style="color: #F2C16D;">Database</h2>
+				<p>Microsoft Technology Associate (MTA) is a set of entry-level 
+				   IT certification exams offered by Microsoft. Exams are available 
+				   in three different tracks: IT infrastructure, database, and development.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #F2C16D;">View details »</a>
+				</p>
+			</div>
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/networksLogo.png" alt="Networks Logo">
+				<h2 style="color: #F2DE6D;">Networks</h2>
+				<p>Series of video tutorials, code samples and exercises
+				   taht allows you to understand and master various concepts
+				   of Object Oriented Programming in C sharp and Java.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #F2DE6D;">View details »</a>
+				</p>
+			</div>
+			<div class="col-md-4 col-sm-6 posCenter">
+				<img class="img-circle" src="images/projectManagementLogo.png" alt="Project Management Logo">
+				<h2 style="color: #B56DF2;">Project Management</h2>
+				<p>Series of video tutorials, code samples and exercises
+				  taht allows you to understand and master various concepts
+				  of Object Oriented Programming in C sharp and Java.</p>
+				<p>
+					<a class="btn btn-default" href="#" role="button" style="border-color: #B56DF2;">View details »</a>
+				</p>
+			</div>
+		</div><!-- END OF ROW -->
 
 
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© 2014 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
+            <!-- WILL BE FOOTER -->
 
-    </div><!-- /.container -->
+
+		</div><!-- END OF CONTAINER -->
 
 </asp:Content>

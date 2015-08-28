@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="ToodleCourse.master.cs" Inherits="Toodle.ToodleCourse" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Slider" runat="server">
+    </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">       
+    </asp:ContentPlaceHolder>
+    <div>
+        <asp:Menu ID="tabbedMenu" runat="server" Orientation="Horizontal" OnMenuItemClick="tabbedMenu_MenuItemClick" CssClass="tabs">
+            
+<%--            <StaticSelectedStyle BackColor="#9D9D9D"
+                HorizontalPadding="9px"
+                VerticalPadding="15px"
+                 ForeColor="White" />--%>
+            <StaticSelectedStyle BackColor="white"
+                HorizontalPadding="7px"
+                VerticalPadding="15px"
+                 ForeColor="#419E18" />
+
+
+            <Items>
+                <asp:MenuItem Text="Content" Value="0" ></asp:MenuItem>
+                <asp:MenuItem Text="Revision" Value="1"></asp:MenuItem>
+                <asp:MenuItem Text="Test" Value="2"></asp:MenuItem>
+                <asp:MenuItem Text="Progress" Value="3"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <div id="multiTabs">                                                                                           
+        <asp:MultiView ID="mvTabs" runat="server" ActiveViewIndex="0">
+            <asp:View ID="View1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- Editable content of tab 1 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="View2" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    <!-- Editable content of tab 2 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="View3" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                    <!-- Editable content of tab 3 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="View4" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                    <!-- Editable content of tab 4 -->
+                </asp:ContentPlaceHolder>
+            </asp:View>
+        </asp:MultiView>
+        </div>
+    </div>
+</asp:Content>
