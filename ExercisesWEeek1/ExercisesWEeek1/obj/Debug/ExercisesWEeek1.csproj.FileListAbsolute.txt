@@ -1,5 +1,0 @@
-P:\O.O.Programming II1\ExercisesWEeek1\ExercisesWEeek1\bin\ExercisesWEeek1.dll
-P:\O.O.Programming II1\ExercisesWEeek1\ExercisesWEeek1\bin\ExercisesWEeek1.pdb
-P:\O.O.Programming II1\ExercisesWEeek1\ExercisesWEeek1\obj\Debug\ExercisesWEeek1.csprojResolveAssemblyReference.cache
-P:\O.O.Programming II1\ExercisesWEeek1\ExercisesWEeek1\obj\Debug\ExercisesWEeek1.dll
-P:\O.O.Programming II1\ExercisesWEeek1\ExercisesWEeek1\obj\Debug\ExercisesWEeek1.pdb
