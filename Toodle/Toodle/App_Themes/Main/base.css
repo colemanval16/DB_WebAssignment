@@ -41,8 +41,8 @@ a:hover, a:active, a:focus {
     background-color:    rgb(92, 168, 92);
     padding:            7px 15px !important;
     margin-top:         6px;
-    border-top-left-radius: 4px; /* rounding corners of tab head */
-    border-top-right-radius: 4px; /* rounding corners of tab head */
+    border-top-left-radius: 4px; 
+    border-top-right-radius: 4px; 
     color:              white;
     margin-right:       1px;
 }
