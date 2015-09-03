@@ -7,10 +7,17 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Toodle Welcome Page</title>
+    <meta name="author" content="Junga Ji Kavanagh, Artur Turczyn & Valerie Coleman"/>
+    
+    <title> <asp:ContentPlaceHolder ID="Title" runat="server">
+    <%--<title>Toodle Welcome Page</title>--%>
+    </asp:ContentPlaceHolder></title>
     
     <!-- Bootstrap core CSS -->
-    <link href="App_Themes/Main/bootstrap.css" rel="stylesheet" />
+    <link href="App_Themes/Main/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!--Link for base.css-->
+    <link href="App_Themes/Main/base.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,6 +29,7 @@
     <link href="App_Themes/Main/carousel.css" rel="stylesheet" />
     <link href="App_Themes/Main/base.css" rel="stylesheet"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
+        <%--<meta name="description" content="Contact Details for Toodle"/>--%>
     </asp:ContentPlaceHolder>
 
 </head>
@@ -48,7 +56,7 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li  class="dropdown">
-                            <a>MTA </a>
+                            <a href="MTAMain.aspx">MTA </a>
                             <ul class="dropdown-menu submenu">
                                 <li class="dropdown">
                                     <a href="#">IT Infrastructure Track</a>
@@ -62,7 +70,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">Database Track</a>
+                                    <a href="href="#"">Database Track</a>
                                     <ul  class="dropdown-menu submenu">
                                         <li><a href="DatabaseFundamentals.aspx">Database Fundamentals</a></li>
                                     </ul>
@@ -70,8 +78,8 @@
                                 <li class="dropdown">
                                     <a href="#">Developer Track</a>
                                     <ul class="dropdown-menu submenu">
-                                        <li><a href="#">Software Development Fundamentals</a></li>
-                                        <li><a href="#">Web Development Fundamentals</a></li>
+                                        <li><a href="UnderConstructionCourse.aspx">Software Development Fundamentals</a></li>
+                                        <li><a href="UnderConstructionCourse.aspx">Web Development Fundamentals</a></li>
                                         <li><a href="#">.NET Fundamentals</a></li>
                                         <li><a href="#">Gaming Development Fundamentals</a></li>
                                         <li><a href="#">HTML5 App Development Fundamentals</a></li>
@@ -80,11 +88,11 @@
                                 </li>
                            </ul>
                         </li>
-                        <li><a href="#">Programming</a></li>
-                        <li><a href="#">Web Design</a></li>
-					    <li><a href="#">Database</a></li>
-					    <li><a href="#">Networks</a></li>
-					    <li><a href="#">Project Management</a></li>
+                        <li><a href="UnderConstruction.aspx">Programming</a></li>
+                        <li><a href="UnderConstruction.aspx">Web Design</a></li>
+					    <li><a href="UnderConstruction.aspx">Database</a></li>
+					    <li><a href="UnderConstruction.aspx">Networks</a></li>
+					    <li><a href="UnderConstruction.aspx">Project Management</a></li>
                         <!--<li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
                         <li><a href="#">Separated link</a></li>

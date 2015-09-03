@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministratorPage.aspx" />
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
@@ -65,17 +66,47 @@
     <Content Include="App_Themes\Main\ie-emulation-modes-warning.js" />
     <Content Include="App_Themes\Main\ie10-viewport-bug-workaround.js" />
     <Content Include="App_Themes\Main\jquery.js" />
+    <Content Include="App_Themes\Main\script.js" />
     <Content Include="Contact.aspx" />
     <Content Include="DatabaseFundamentals.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
     <Content Include="Images\email5.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />
+    <Content Include="Images\slidedatabase.gif" />
+    <Content Include="Images\slidedatabase2.gif" />
+    <Content Include="Images\slideMTA.jpg" />
+    <Content Include="Images\slideMTA2.jpg" />
+    <Content Include="Images\slideNetwork.jpg" />
+    <Content Include="Images\slideNetwork2.jpg" />
+    <Content Include="Images\slideprogramming1.gif" />
+    <Content Include="Images\slideprogramming2.jpg" />
+    <Content Include="Images\slideprogramming3.jpg" />
+    <Content Include="Images\sliderProjectMgmt.jpg" />
+    <Content Include="Images\sliderProjectMgmt2.jpg" />
+    <Content Include="Images\slidewebdesign.jpg" />
+    <Content Include="Images\slidewebdesign2.jpg" />
     <Content Include="Images\telephone5.png" />
+    <Content Include="Images\underConstruction.jpg" />
+    <Content Include="Images\underConstruction1.jpg" />
+    <Content Include="Images\underConstruction2.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="MTAMain.aspx" />
+    <Content Include="SoftwareFundamentals.aspx" />
+    <Content Include="StudentProfile.aspx" />
+    <Content Include="UnderConstruction.aspx" />
+    <Content Include="UnderConstructionCourse.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministratorPage.aspx.cs">
+      <DependentUpon>AdministratorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministratorPage.aspx.designer.cs">
+      <DependentUpon>AdministratorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,6 +121,13 @@
     <Compile Include="DatabaseFundamentals.aspx.designer.cs">
       <DependentUpon>DatabaseFundamentals.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,7 +135,28 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MTAMain.aspx.cs">
+      <DependentUpon>MTAMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTAMain.aspx.designer.cs">
+      <DependentUpon>MTAMain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoftwareFundamentals.aspx.cs">
+      <DependentUpon>SoftwareFundamentals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftwareFundamentals.aspx.designer.cs">
+      <DependentUpon>SoftwareFundamentals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.designer.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Toodle.Master.cs">
       <DependentUpon>Toodle.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,6 +170,20 @@
     </Compile>
     <Compile Include="ToodleCourse.master.designer.cs">
       <DependentUpon>ToodleCourse.master</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.designer.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstructionCourse.aspx.cs">
+      <DependentUpon>UnderConstructionCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstructionCourse.aspx.designer.cs">
+      <DependentUpon>UnderConstructionCourse.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

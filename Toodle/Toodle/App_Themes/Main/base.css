@@ -1,6 +1,29 @@
 ﻿/* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+h1 {
+text-align: center;
+}
+
+#contactHeader{
+	text-align:center;	
+}
+
+.labelclass {
+    margin-top:         10px;
+    margin-left:        20px;
+}
+
+.buttonClass {
+    margin-top:         10px;
+    margin-left:        20px;
+}
+
+.txtBoxclass {
+    margin-top:         10px;
+    margin-left:        20px;
+}
+
 a:hover, a:active, a:focus {
    outline:             0;
 }
