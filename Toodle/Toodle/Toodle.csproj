@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministratorPage.aspx" />
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
@@ -67,15 +68,27 @@
     <Content Include="App_Themes\Main\jquery.js" />
     <Content Include="Contact.aspx" />
     <Content Include="DatabaseFundamentals.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
     <Content Include="Images\email5.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />
     <Content Include="Images\telephone5.png" />
     <Content Include="Index.aspx" />
+    <Content Include="MTAMain.aspx" />
+    <Content Include="SoftwareDevelopmentFundamentals.aspx" />
+    <Content Include="UnderConstruction.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebDevelopmentFundamentals.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministratorPage.aspx.cs">
+      <DependentUpon>AdministratorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministratorPage.aspx.designer.cs">
+      <DependentUpon>AdministratorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,12 +103,40 @@
     <Compile Include="DatabaseFundamentals.aspx.designer.cs">
       <DependentUpon>DatabaseFundamentals.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MTAMain.aspx.cs">
+      <DependentUpon>MTAMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTAMain.aspx.designer.cs">
+      <DependentUpon>MTAMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoftwareDevelopmentFundamentals.aspx.cs">
+      <DependentUpon>SoftwareDevelopmentFundamentals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftwareDevelopmentFundamentals.aspx.designer.cs">
+      <DependentUpon>SoftwareDevelopmentFundamentals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToodleCourse.master.cs">
+      <DependentUpon>ToodleCourse.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToodleCourse.master.designer.cs">
+      <DependentUpon>ToodleCourse.master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Toodle.Master.cs">
@@ -105,24 +146,34 @@
     <Compile Include="Toodle.Master.designer.cs">
       <DependentUpon>Toodle.Master</DependentUpon>
     </Compile>
-    <Compile Include="ToodleCourse.master.cs">
-      <DependentUpon>ToodleCourse.master</DependentUpon>
+    <Compile Include="UnderConstruction.aspx.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ToodleCourse.master.designer.cs">
-      <DependentUpon>ToodleCourse.master</DependentUpon>
+    <Compile Include="UnderConstruction.aspx.designer.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebDevelopmentFundamentals.aspx.cs">
+      <DependentUpon>WebDevelopmentFundamentals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebDevelopmentFundamentals.aspx.designer.cs">
+      <DependentUpon>WebDevelopmentFundamentals.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Toodle.Master" />
     <Content Include="App_Themes\Main\Main.skin" />
     <Content Include="ToodleCourse.master" />
+    <Content Include="Toodle.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

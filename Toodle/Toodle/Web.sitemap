@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="Index"  description="">
+        <siteMapNode url="Index.aspx" title="Home Page"  description="" />
+        <siteMapNode url="Courses.aspx" title="Course List"  description="" >
+           <siteMapNode url="MTA.aspx" title="MTA's"  description="" >
+              <siteMapNode url="" title="ITInfrastructureTrack"  description="" >
+                 <siteMapNode url="" title="Windows Operating System Fundamentals"  description="" >
+                 </siteMapNode>
+                 <siteMapNode url="" title="Windows Server Administration Fundamentals"  description="" >
+                 </siteMapNode>
+                 <siteMapNode url="" title="Networking Fundamentals"  description="" >
+                 </siteMapNode>
+                 <siteMapNode url="" title="Security Fundamentals"  description="" >
+                 </siteMapNode>
+                 <siteMapNode url="" title="Mobility and Device Fundamentals"  description="" >
+                 </siteMapNode>
+                 <siteMapNode url="" title="Cloud Fundamentals"  description="" >
+                 </siteMapNode>
+              </siteMapNode>
+              <siteMapNode url="" title="Database Track"  description="" >
+                 <siteMapNode url="DatabaseFundamentals.aspx" title="Database Fundamentals"  description="" >
+                 </siteMapNode>
+              </siteMapNode>
+              <siteMapNode url="" title="Developer Track"  description="" >
+                <siteMapNode url="" title="Software Development Fundamentals"  description="" >
+                </siteMapNode>
+                <siteMapNode url="" title="Web Development Fundamentals"  description="" >
+                </siteMapNode>
+                <siteMapNode url="" title=".NET Fundamentals"  description="" >
+                </siteMapNode>
+                <siteMapNode url="" title="Gaming Development Fundamentals"  description="" >
+                </siteMapNode>
+                <siteMapNode url="" title="HTML5 App Development Fundamentals"  description="" >
+                </siteMapNode>
+                <siteMapNode url="" title="Software Testing Fundamentals"  description="" >
+                </siteMapNode>
+              </siteMapNode>          
+           </siteMapNode>
+          <siteMapNode url="" title="Programming"  description="" >
+          </siteMapNode>
+          <siteMapNode url="" title="Web Design"  description="" >
+          </siteMapNode>
+          <siteMapNode url="" title="Databases"  description="" >
+          </siteMapNode>
+          <siteMapNode url="" title="Networks"  description="" >
+          </siteMapNode>
+          <siteMapNode url="" title="Project Management"  description="" >
+          </siteMapNode>    
+        </siteMapNode>
+        <siteMapNode url="Contact.aspx" title="Contact Page"  description="" />
+        <siteMapNode url="DBS.aspx" title="Link to DBS Main Page"  description="" />
+    </siteMapNode>
+</siteMap>
+

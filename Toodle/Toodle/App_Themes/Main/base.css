@@ -8,39 +8,9 @@ a:hover, a:active, a:focus {
 	text-align:         center;
 }
 .tabs ul li a{
-    background-color:    #D4D4D4;
-    padding:            7px 15px !important;
-    margin-top:         4px;
-    border-top-left-radius: 4px; /* rounding corners of tab head */
-    border-top-right-radius: 4px; /* rounding corners of tab head */
-    color:              #5A5A5A;
-    margin-right:       1px;
-}
-
- ul li a.static.selected{
-     background-color:  #9D9D9D;
-     padding:           9px 15px !important;
-     margin-top:        0px;
-     color:             white;
-    }
- ul li a.highlighted{
-     background-color:  #CFCFCF;
-     padding:           9px 15px !important;
-     margin-top:        0px;
-    }
-
- #multiTabs{
-    min-height:         500px; 
-    background-color:   #9D9D9D;
-    padding:            4%;
-}
-
-/*--------------------------------------------------------------------------------------------*/
-/* different style tabs  - comment whole block below to see tabs monochromatic */
-.tabs ul li a{
     background-color:    rgb(92, 168, 92);
     padding:            7px 15px !important;
-    margin-top:         6px;
+    margin-top:         4px;
     border-top-left-radius: 4px; /* rounding corners of tab head */
     border-top-right-radius: 4px; /* rounding corners of tab head */
     color:              white;
@@ -48,45 +18,45 @@ a:hover, a:active, a:focus {
 }
 
  ul li a.static.selected{
-     background-color:  white;
+     background-color:  #8CF26D;
      padding:           9px 15px !important;
      margin-top:        0px;
-     color:             rgb(63, 156, 21);
-     border:            solid thin #8CF26D;
-     border-bottom:     solid white 1px;
-     position:          relative;
-     top:               1px;
+     color:             #5A5A5A;
     }
  ul li a.highlighted{
-     background-color:  #A1F6A1;
+     background-color:  #8CF26D;
      padding:           9px 15px !important;
-     margin-top:        2px;
+     margin-top:        0px;
     }
 
  #multiTabs{
     min-height:         500px; 
-    background-color:   white;
+    background-color:   #8CF26D;
     padding:            4%;
-    border:             solid thin #8CF26D;
-    border-top-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 0px 4px 4px 4px;
 }
-
- /* end for - different style tabs */
- /*-----------------------------------------------------------------------------------*/
 
 #wrapper {
     width:              100%;
 }
 
+#nav_bg {
+    height: 83px; 
+    float: left; 
+    position: fixed; 
+    top: 0px; 
+    z-index: 100; 
+    background: transparent -moz-linear-gradient(270deg, rgb(255, 255, 255) 92%, rgba(83, 141, 185, 0) 100%); 
+    left: 8%;
+
+
+}
 .navbar-wrapper {
     position:           fixed;
     right:              0%;
     left:               0%;
     z-index:            10;
 }
-
 
 ul.dropdown-menu>li>ul>li>ul {
     display:            none; 
@@ -98,7 +68,15 @@ ul.dropdown-menu>li:hover>ul {
 .submenu {
     left:               171px;
     top:                -7px;
-} 
+}
+#login {
+     top:               50px;
+     left:              -96px;
+     padding:           5px 13px;
+     background:        rgb(255, 255, 255);
+     color:             darkgray;
+}
+
 
 /* Small devices, 768px and up */
 @media (min-width: 768px) {
@@ -136,4 +114,7 @@ ul.dropdown-menu>li:hover>ul {
     left:               9%;
 }
 
+}
+#progressBarPlaceholder {
+    height: 300px;
 }

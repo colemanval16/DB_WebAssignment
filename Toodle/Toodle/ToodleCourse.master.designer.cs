@@ -13,13 +13,31 @@ namespace Toodle {
     public partial class ToodleCourse {
         
         /// <summary>
-        /// ContentPlaceHolder5 control.
+        /// courseHeadMeta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder5;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder courseHeadMeta;
+        
+        /// <summary>
+        /// courseHeadLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder courseHeadLinks;
+        
+        /// <summary>
+        /// courseProgressBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder courseProgressBar;
         
         /// <summary>
         /// tabbedMenu control.
@@ -49,13 +67,13 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// placeholderTabOne control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder placeholderTabOne;
         
         /// <summary>
         /// View2 control.
@@ -67,13 +85,13 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// ContentPlaceHolder2 control.
+        /// placeholderTabTwo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder placeholderTabTwo;
         
         /// <summary>
         /// View3 control.
@@ -85,13 +103,13 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
-        /// ContentPlaceHolder3 control.
+        /// placeholderTabThree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder3;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder placeholderTabThree;
         
         /// <summary>
         /// View4 control.
@@ -103,12 +121,12 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.View View4;
         
         /// <summary>
-        /// ContentPlaceHolder4 control.
+        /// placeholderTabFour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder4;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder placeholderTabFour;
     }
 }
