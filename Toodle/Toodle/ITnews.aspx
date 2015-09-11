@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Slider" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="mainContent" runat="server">
-    <div id="news">
+        <div id="news">
    	<div class="row">
 	<div class="col-md-10 col-md-offset-1">
        <h2>Top Technology News from BBC</h2>
@@ -33,4 +33,5 @@
     </div>
 </div>
 </div>
+
 </asp:Content>
