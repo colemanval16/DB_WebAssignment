@@ -5,14 +5,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Slider" runat="server">
           <!-- PLACEHOLDER FOR THE SLIDESHOW -->
 	<div style="height: 100px; margin-bottom:40px"></div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="mainContent" runat="server">
-    <div id="news">
+        <div id="news">
    	<div class="row">
 	<div class="col-md-10 col-md-offset-1">
        <h2>Top Technology News from BBC</h2>
@@ -37,4 +35,5 @@
     </div>
 </div>
 </div>
+
 </asp:Content>

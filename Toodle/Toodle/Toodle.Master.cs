@@ -15,7 +15,7 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           // useraccount.Visible = false;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -54,7 +54,9 @@ namespace Toodle
                                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN OK')", true);
                                 useraccount.Visible = true;
                                 loginBox.Visible = false;
+                                //accountLink.Visible = true;
                                 lblName.Text = "Hello " +rd.GetValue(0).ToString();
+                                Session.Add("name", rd.GetValue(0).ToString());
                             }
                             else
                             {
