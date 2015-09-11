@@ -96,16 +96,18 @@
                         </ul>                        
                     </div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">  
-                  <div class="dropdown" id="loginBox" runat="server" style="float: right; padding-top: 15px;">
-                    <a style="color: white; padding: 15px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
-                    <div class="dropdown-menu" id="login">
-                        <asp:Label ID="lblStudentID" runat="server" Text="Student ID"></asp:Label>
-                        <asp:TextBox ID="txtStudentID" runat="server"></asp:TextBox>
-                        <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" Wrap="True"></asp:TextBox>
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-                    </div> <!-- CLOSING dropdown-menu DIV -->
-                  </div> <!-- CLOSING dropdown DIV -->
+                        <div class="dropdown" id="loginBox" runat="server" style="float: right; padding-top: 15px;">
+                            <a style="color: white; padding: 15px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                            <div class="dropdown-menu" id="login">
+                                <asp:Label ID="lblStudentID" runat="server" Text="Student ID"></asp:Label>
+                                <asp:TextBox ID="txtStudentID" runat="server"></asp:TextBox>
+                                <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
+                                <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" Wrap="True"></asp:TextBox>
+                                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                            </div>
+                            <!-- CLOSING dropdown-menu DIV -->
+                        </div>
+                        <!-- CLOSING dropdown DIV -->
                         </asp:ContentPlaceHolder>
                 </div> <!-- end of div "navbar-collapse collapse" -->             
               </nav>

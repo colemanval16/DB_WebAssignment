@@ -100,6 +100,7 @@
     <Content Include="App_Themes\Main\ie10-viewport-bug-workaround.js" />
     <Content Include="App_Themes\Main\jquery.js" />
     <Content Include="App_Themes\Main\script.js" />
+    <Content Include="App_Themes\Main\styles.css" />
     <Content Include="Contact.aspx" />
     <Content Include="DatabaseFundamentals.aspx" />
     <Content Include="FAQ.aspx" />
