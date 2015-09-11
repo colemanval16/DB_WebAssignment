@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account.aspx" />
     <Content Include="AdministratorPage.aspx" />
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
@@ -110,6 +111,7 @@
     <Content Include="Images\q13no2.PNG" />
     <Content Include="Images\telephone5.png" />
     <Content Include="Index.aspx" />
+    <Content Include="ITnews.aspx" />
     <Content Include="MTAMain.aspx" />
     <Content Include="SoftwareDevelopmentFundamentals.aspx" />
     <Content Include="UnderConstruction.aspx" />
@@ -117,6 +119,13 @@
     <Content Include="WebDevelopmentFundamentals.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministratorPage.aspx.cs">
       <DependentUpon>AdministratorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +160,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ITnews.aspx.cs">
+      <DependentUpon>ITnews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ITnews.aspx.designer.cs">
+      <DependentUpon>ITnews.aspx</DependentUpon>
     </Compile>
     <Compile Include="MTAMain.aspx.cs">
       <DependentUpon>MTAMain.aspx</DependentUpon>
