@@ -7,6 +7,10 @@ a:hover, a:active, a:focus {
 .posCenter{
 	text-align:         center;
 }
+/*Padding for faq*/
+dd {
+    padding-bottom:20px;
+}
 .tabs ul li a{
     background-color:    rgb(92, 168, 92);
     padding:            7px 15px !important;
