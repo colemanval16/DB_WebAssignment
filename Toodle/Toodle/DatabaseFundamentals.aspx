@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="courseHeadLinks" runat="server">
     <link rel="stylesheet" href="fancyBox/source/jquery.fancybox.css" media="screen"/>
-		<script type="text/javascript" src="fancyBox/source/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="App_Theme/Main/fancyBox/source/jquery.fancybox.pack.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="courseProgressBar" runat="server">
     <p style="height: 200px;"></p>
