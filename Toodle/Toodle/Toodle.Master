@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Junga Ji Kavanagh, Artur Turczyn & Valerie Coleman"/>
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <asp:ContentPlaceHolder ID="headMeta" runat="server">
         <!-- Editable content of the head of document for meta-description and title -->
     </asp:ContentPlaceHolder>
@@ -124,17 +124,26 @@
                   <!-- Editable content of the page main content -->
               </asp:ContentPlaceHolder>
         
-        <!-- <footer>
-                <div class="panel-footer">
+         <footer>
+                <div class="posCenter">
                     <div class="container">
                         <p><a href="#">Back to top</a></p>
+                        <nav>
+				            <ul>
+					            <li><a href="#"><img src="images/twitter20.png" alt="Twitter" ></a></li>
+					            <li><a href="#"><img src="images/linkedIn11.png" alt="LinkedIn" ></a></li>
+					            <li><a href="#"><img src="images/facebook31.png" alt="Facebook" ></a></li>
+                                <li><a href="#"><img src="images/youtube18.png" alt="Youtube" ></a></li>
+				            </ul>
+			            </nav>
                         <p></p>
                     </div>
                 </div>
-             </footer> -->
+             </footer> 
           </div> <!-- end of "content container" -->
        </div> <!-- end of wrapper/main "container" -->
     </form>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

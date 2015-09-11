@@ -1,11 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="ITnews.aspx.cs" Inherits="Toodle.ITnews" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
+    <title>Toodle - IT News from BBC</title>
+    <meta name="description" content="Top Technology News from BBC" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Slider" runat="server">
+          <!-- PLACEHOLDER FOR THE SLIDESHOW -->
+	<div style="height: 100px; margin-bottom:40px"></div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="mainContent" runat="server">
     <div id="news">

@@ -6,13 +6,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="courseHeadLinks" runat="server">
     <link rel="stylesheet" href="fancyBox/source/jquery.fancybox.css" media="screen"/>
-		<script type="text/javascript" src="App_Theme/Main/fancyBox/source/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="App_Themes/Main/fancyBox/source/jquery.fancybox.pack.js"></script>
+        <script src="App_Themes/Main/script.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="courseProgressBar" runat="server">
     <p style="height: 200px;"></p>
     <p>Placeholder for the progress bar...</p>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="placeholderTabOne" runat="server">
+
+    <!----- *****************************CONTENT********************************---------->
     <h2>Content for Database Fundamentals</h2>
 <!----------------------------Section 1---------------------------------------------->
     <h3>Part 1: Understandign Core Database Concepts</h3>
@@ -479,18 +482,35 @@ is structured as follows:</p>
                     <li><strong>Replicated services</strong> re-create a full or incremental reproduction of the database.</li>
                 </ul>
 
-
+    <!----- *****************************REVISION********************************---------->
         <asp:Button ID="btnCourseContentComplete" runat="server" Text="To access Tutorials" />
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="placeholderTabTwo" runat="server">
-     <h2>Tutorials</h2>
+     <h2 style="margin-bottom:30px">Video Tutorials for revision:</h2>
+    <p><strong>Microsoft MTA Database Administration Fundamentals: Exam 98-364 - Sample Lesson</strong></p>
     <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/-mVDfFDWcqg">
-        <p>Click here to access tutorial</p>
+        <img src="images/MTAdbYouTube2.png" alt="MTA Video 1" height="175" width="325">
         </a>
+    <p><strong>Introduction to Database Management Systems 1: Fundamental Concepts</strong></p>
+        <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/6u2zsJOJ_GE">
+        <img src="images/MTAdbYouTube1.png" alt="MTA Video 1" height="175" width="325">
+        </a>
+    <p><strong> Tutorial for beginners 1/4; SQL Basic database/scripting Introduction lesson</strong></p>
+        <a class="fancybox fancybox.iframe" href="hhttps://www.youtube.com/embed/cYmQr8yeALA">
+        <img src="images/MTAdbYouTube3.png" alt="MTA Video 1" height="175" width="325">
+        </a>
+
+    <p><strong>Usefull Websites:</strong></p>
+    <ul>
+         <li><a href="https://www.microsoft.com/learning/en-ie/mta-certification.aspx" target="_blank" title="Official MTA Webstie">Official MTA Certification Website</a></li>
+        <li><a href="https://borntolearn.mslearn.net/certification/database/w/wiki/519.364-database-fundamentals" target="_blank" title="Borntolearn MSlearn.net">Born to learn by MS</a></li>
+    </ul>
     <asp:Button ID="btnTutorialsComplete" runat="server" Text="To access Mock Exam" />
-    <script src="script.js" type="text/javascript"></script>
+
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="placeholderTabThree" runat="server">
+
+    <!----- *****************************MOCK EXAM********************************---------->
  <h2>Database Fundamentals Mock Exam</h2>
     <p>
             1) Which of the following is not a DDL statment
@@ -623,11 +643,58 @@ is structured as follows:</p>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="rdMock13" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
 <p>    
-            14) You have a table that contains the following data.
-        <img  src="Images/q13no1.png" alt="Q13 Table" />
-            You break the table into the following two tables.
-        <img  src="Images/q13no2.png" alt="Q13 Table 2 and 3" />
-            The process is referred to as:
+            14) You have a table that contains the following data.</p>
+    <table>
+        <tr>
+            <th>ProductID</th>
+            <th>ProductName</th>
+            <th>Color1</th>
+            <th>Color2</th>
+            <th>Color3</th>
+        </tr>
+        <tr>
+            <td>4545</td>
+            <td>Shirt</td>
+            <td>Blue</td>
+            <td>Green</td>
+            <td>Purple</td>
+        </tr>
+        </table>
+        
+    <p>You break the table into the following two tables.</p>
+
+    <table>
+        <tr>
+            <th>ProductID</th>
+            <th>ProductName</th>
+        </tr>
+        <tr>
+            <td>4545</td>
+            <td>Shirt</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>ProductID</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>4545</td>
+            <td>Blue</td>
+        </tr>
+        <tr>
+            <td>4545</td>
+            <td>Green</td>
+        </tr>
+        <tr>
+            <td>4545</td>
+            <td>Purple</td>
+        </tr>
+    </table>
+            
+        
+        <p>The process is referred to as:</p>
          <asp:RadioButtonList ID="rdMock14" runat="server">
                 <asp:ListItem Value="1">defragmentation</asp:ListItem>
                 <asp:ListItem Value="2">normalisation</asp:ListItem>
@@ -635,7 +702,7 @@ is structured as follows:</p>
                  <asp:ListItem Value="3">denormalisation</asp:ListItem>
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="rdMock14" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
-   </p>
+   
    <p>
             15) Using the ________ statement is the most efficient way to delete all rows from a table.
          <asp:RadioButtonList ID="rdMock15" runat="server">
@@ -656,28 +723,28 @@ is structured as follows:</p>
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="rdMock16" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
-    <p>
-            17) Which statement creates a composite key?
+   
+           <p>  17) Which statement creates a composite key?</p>
             
-            A. CREATE TABLE Order
-                (OrderID        INTEGER PRIMARY KEY,
-                 OrderItemID    INTEGER PRIMARY KEY)
+            <p><strong>A. CREATE TABLE Order</strong></p>
+            <p>(OrderID        INTEGER PRIMARY KEY,</p>
+            <p>OrderItemID    INTEGER PRIMARY KEY)</p>
 
-            B. CREATE TABLE Order
-                (OrderID        INTEGER,
-                 OrderItemID    INTEGER,
-                 PRIMARY KEY OrderID,
-                 PRIMARY KEY OrderItemID)
+            <p><strong>B. CREATE TABLE Order</strong></p>
+                <p>(OrderID        INTEGER,</p>
+                <p> OrderItemID    INTEGER,</p>
+                <p> PRIMARY KEY OrderID,</p>
+                <p> PRIMARY KEY OrderItemID)</p>
             
-            C. CREATE TABLE Order
-                (OrderID        INTEGER,
-                 OrderItemID    INTEGER,
-                 PRIMARY KEY)      
+            <p><strong>C. CREATE TABLE Order</strong></p>
+              <p>  (OrderID        INTEGER,</p>
+              <p>   OrderItemID    INTEGER,</p>
+              <p>   PRIMARY KEY)   </p>   
 
-            D. CREATE TABLE Order
-                (OrderID        INTEGER,
-                 OrderItemID    INTEGER, 
-                PRIMARY KEY(OrderID, OrderItemID))
+           <p><strong>D. CREATE TABLE Order</strong></p>
+               <p> (OrderID        INTEGER,</p>
+               <p>  OrderItemID    INTEGER, </p>
+               <p> PRIMARY KEY(OrderID, OrderItemID))</p>
 
          <asp:RadioButtonList ID="rdMock17" runat="server">
                 <asp:ListItem Value="1">Option A</asp:ListItem>
@@ -686,7 +753,7 @@ is structured as follows:</p>
                  <asp:ListItem Value="3">Option D</asp:ListItem>
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="rdMock17" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
-        </p>
+        
     <p>
             18) At 3:00pm(1500 hrs), you create a backup of your database. At 4:00pm (1600 hrs), you create
             a table named Customer and import data into the table. At 5:00pm (1700 hrs), your server fails.
@@ -724,6 +791,8 @@ is structured as follows:</p>
             <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" />
       </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="placeholderTabFour" runat="server">
+
+    <!----- *****************************PROGRESS********************************---------->
     <h2>Tab four content</h2>
     <p>Content, content and more content...</p>
     <p>Content, content and more content...</p>

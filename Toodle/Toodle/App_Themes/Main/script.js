@@ -21,8 +21,12 @@ function initialize() {
   });
 }
 
-$(document).rea
+$(document).ready(function () {
+    $("p").hide();
+    $("h3").click(function ()
+    {
+        $(this).next("p").slideToggle(500);
+    });
 
-	function formsubmitted() {
-	alert("Thank you, your form has been submitted");
-			}
+});
+
