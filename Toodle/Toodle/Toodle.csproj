@@ -106,6 +106,7 @@
     <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
     <Content Include="Images\email5.png" />
+    <Content Include="Images\lock.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />
     <Content Include="Images\q13no1.PNG" />

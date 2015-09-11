@@ -3,8 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Slider" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="mainContent" runat="server">
