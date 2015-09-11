@@ -31,21 +31,21 @@
                 </div>
                 <div class="col-md-3">
                     <img class="img-circle" src="Images/contract11.png" alt="Contract image" height="100" width="100" />
-                    <h3>Message Us:</h3>
+                    <h3 style="color: #6DB5F2;">Message Us:</h3>
                     <p>Send us a message below.</p>
                 </div>
                 <div class="col-md-3">
                     <img class="img-circle" src="Images/contract11.png" alt="Contract image" height="100" width="100" />
-                    <h3>Pop into us:</h3>
+                    <h3 style="color: #B56DF2">Pop into us:</h3>
                     <p>See map below:</p>
                 </div>
               </div>
 
     
             <div class="row">
-                <div class="col-md-6">
-                    <fieldset>
-                        <legend>Contact Us:</legend>
+                <div class="col-md-4">
+                   
+                        <h3 style="color: #6DB5F2;">Contact Us:</h3>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
                     <asp:Label ID="lblFName" runat="server" Text="First Name:"></asp:Label>
                     <br />
@@ -77,21 +77,19 @@
                     <br />
                     <asp:Label ID="lblMsg" runat="server" Text="Message:"></asp:Label>
                     <br />
-                    <asp:TextBox ID="txtMsg" runat="server" Height="210px"></asp:TextBox>
+                    <asp:TextBox ID="txtMsg" runat="server" Height="100px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="MessageValidator" runat="server" ControlToValidate="txtMsg" Display="Dynamic" ErrorMessage="**Required**" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegMessageValidator" runat="server" ControlToValidate="txtMsg" Display="Dynamic" ErrorMessage="**Invalid**" ForeColor="Red" ValidationExpression="[A-Za-z0-9\s\,\.]+"></asp:RegularExpressionValidator>
                     <br />
                     <br />    
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-                 </fieldset>
+                 
                 </div>
 
-                <div class="col-md-6">
-                    <fieldset>
-                        <legend>Come find us here:</legend>
-                        <iframe id="locationmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.1526270866298!2d-6.265523199999999!3d53.34052399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9de863ce97%3A0xd5fd5a41e4548a27!2sDublin+Business+School!5e0!3m2!1sen!2suk!4v1441829434319" width="600" height="450"  allowfullscreen=""></iframe>
-				
-                    </fieldset>
+                <div class="col-md-8">
+                   
+                        <h3 style="color: #B56DF2">Come find us here:</h3>
+                        <iframe id="locationmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.1526270866298!2d-6.265523199999999!3d53.34052399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9de863ce97%3A0xd5fd5a41e4548a27!2sDublin+Business+School!5e0!3m2!1sen!2suk!4v1441829434319" width="450" height="450"  allowfullscreen=""></iframe>
                 </div>
             </div>
 </div>
