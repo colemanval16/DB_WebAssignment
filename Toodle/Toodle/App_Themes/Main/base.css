@@ -7,6 +7,17 @@ a:hover, a:active, a:focus {
 .posCenter{
 	text-align:         center;
 }
+
+footer {
+    background-color:rgb(16,16,16);
+}
+
+footer li{
+	list-style-type:    none;
+	display:            inline;
+	padding:            5px;
+}
+
 .tabs ul li a{
     background-color:    rgb(92, 168, 92);
     padding:            7px 15px !important;

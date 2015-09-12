@@ -57,24 +57,67 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account.aspx" />
     <Content Include="AdministratorPage.aspx" />
+    <Content Include="App_Data\ToodleDB.mdf" />
+    <Content Include="App_Data\ToodleDB_log.ldf">
+      <DependentUpon>ToodleDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
     <Content Include="App_Themes\Main\carousel.css" />
+    <Content Include="App_Themes\Main\fancyBox\demo\1_b.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\1_s.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\2_b.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\2_s.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\3_b.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\3_s.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\4_b.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\4_s.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\5_b.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\5_s.jpg" />
+    <Content Include="App_Themes\Main\fancyBox\demo\ajax.txt" />
+    <Content Include="App_Themes\Main\fancyBox\demo\iframe.html" />
+    <Content Include="App_Themes\Main\fancyBox\demo\index.html" />
+    <Content Include="App_Themes\Main\fancyBox\lib\jquery-1.10.1.min.js" />
+    <Content Include="App_Themes\Main\fancyBox\lib\jquery-1.9.0.min.js" />
+    <Content Include="App_Themes\Main\fancyBox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="App_Themes\Main\fancyBox\source\blank.gif" />
+    <Content Include="App_Themes\Main\fancyBox\source\fancybox_loading%402x.gif" />
+    <Content Include="App_Themes\Main\fancyBox\source\fancybox_loading.gif" />
+    <Content Include="App_Themes\Main\fancyBox\source\fancybox_overlay.png" />
+    <Content Include="App_Themes\Main\fancyBox\source\fancybox_sprite%402x.png" />
+    <Content Include="App_Themes\Main\fancyBox\source\fancybox_sprite.png" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\fancybox_buttons.png" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="App_Themes\Main\fancyBox\source\jquery.fancybox.css" />
+    <Content Include="App_Themes\Main\fancyBox\source\jquery.fancybox.js" />
+    <Content Include="App_Themes\Main\fancyBox\source\jquery.fancybox.pack.js" />
+    <Content Include="App_Themes\Main\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="App_Themes\Main\holder.htm" />
     <Content Include="App_Themes\Main\ie-emulation-modes-warning.js" />
     <Content Include="App_Themes\Main\ie10-viewport-bug-workaround.js" />
     <Content Include="App_Themes\Main\jquery.js" />
+    <Content Include="App_Themes\Main\script.js" />
+    <Content Include="App_Themes\Main\styles.css" />
     <Content Include="Contact.aspx" />
     <Content Include="DatabaseFundamentals.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
     <Content Include="Images\email5.png" />
+    <Content Include="Images\lock.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />
+    <Content Include="Images\q13no1.PNG" />
+    <Content Include="Images\q13no2.PNG" />
     <Content Include="Images\telephone5.png" />
     <Content Include="Index.aspx" />
+    <Content Include="ITnews.aspx" />
     <Content Include="MTAMain.aspx" />
     <Content Include="SoftwareDevelopmentFundamentals.aspx" />
     <Content Include="UnderConstruction.aspx" />
@@ -82,6 +125,13 @@
     <Content Include="WebDevelopmentFundamentals.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministratorPage.aspx.cs">
       <DependentUpon>AdministratorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,6 +166,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ITnews.aspx.cs">
+      <DependentUpon>ITnews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ITnews.aspx.designer.cs">
+      <DependentUpon>ITnews.aspx</DependentUpon>
     </Compile>
     <Compile Include="MTAMain.aspx.cs">
       <DependentUpon>MTAMain.aspx</DependentUpon>
@@ -165,6 +222,23 @@
     <Content Include="App_Themes\Main\Main.skin" />
     <Content Include="ToodleCourse.master" />
     <Content Include="Toodle.Master" />
+    <Content Include="App_Themes\Main\fancyBox\.access^" />
+    <Content Include="App_Themes\Main\fancyBox\CHANGELOG.md" />
+    <Content Include="App_Themes\Main\fancyBox\demo\.access^" />
+    <Content Include="App_Themes\Main\fancyBox\demo\.attribute^" />
+    <Content Include="App_Themes\Main\fancyBox\lib\.access^" />
+    <Content Include="App_Themes\Main\fancyBox\lib\.attribute^" />
+    <Content Include="App_Themes\Main\fancyBox\README.md" />
+    <Content Include="App_Themes\Main\fancyBox\source\.access^" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\.access^" />
+    <Content Include="App_Themes\Main\fancyBox\source\helpers\.attribute^" />
+    <Content Include="App_Themes\Main\fancyBox\source\Thumbs.db" />
+    <Content Include="App_Themes\Main\fancyBox\sprite.psd" />
+    <Content Include="App_Themes\Main\fancyBox\_gitattributes" />
+    <Content Include="App_Themes\Main\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Main\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Main\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Main\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,6 +249,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

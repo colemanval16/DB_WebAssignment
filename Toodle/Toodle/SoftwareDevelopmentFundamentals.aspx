@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ToodleCourse.master" AutoEventWireup="true" CodeBehind="SoftwareDevelopmentFundamentals.aspx.cs" Inherits="Toodle.SoftwareDevelopmentFundamentals" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="courseHeadMeta" runat="server">
+    <title>MTA - Software Development Fundamentals</title>
+    <meta name="description" content="Course work for Software Development Fundamentals" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="courseHeadLinks" runat="server">
 </asp:Content>

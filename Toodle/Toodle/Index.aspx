@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Toodle.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
-    <title>Main Page</title>
+    <title>Toodle - Main Page</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>
@@ -10,7 +10,7 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:100px">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="0" clas s="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
           <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -91,7 +91,7 @@
 				   IT certification exams offered by Microsoft. Exams are available 
 				   in three different tracks: IT infrastructure, database, and development.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #8CF26D;">View details »</a>
+					<a class="btn btn-default" href="MTAMain.aspx" role="button" style="border-color: #8CF26D;">View details »</a>
 				</p>
 			</div>
 			
@@ -102,7 +102,7 @@
 				   taht allows you to understand and master various concepts
 				   of Object Oriented Programming in C sharp and Java.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #F26D7D;">View details »</a>
+					<a class="btn btn-default" href="UnderConstruction.aspx" role="button" style="border-color: #F26D7D;">View details »</a>
 				</p>
 			</div>
 			
@@ -113,7 +113,7 @@
 				   taht allows you to understand and master various concepts
 				   of Object Oriented Programming in C sharp and Java.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #6DB5F2;">View details »</a>
+					<a class="btn btn-default" href="UnderConstruction.aspx" role="button" style="border-color: #6DB5F2;">View details »</a>
 				</p>
 			</div>
 			</div>
@@ -125,7 +125,7 @@
 				   IT certification exams offered by Microsoft. Exams are available 
 				   in three different tracks: IT infrastructure, database, and development.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #F2C16D;">View details »</a>
+					<a class="btn btn-default" href="UnderConstruction.aspx" role="button" style="border-color: #F2C16D;">View details »</a>
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-6 posCenter">
@@ -135,7 +135,7 @@
 				   taht allows you to understand and master various concepts
 				   of Object Oriented Programming in C sharp and Java.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #F2DE6D;">View details »</a>
+					<a class="btn btn-default" href="UnderConstruction.aspx" role="button" style="border-color: #F2DE6D;">View details »</a>
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-6 posCenter">
@@ -145,7 +145,7 @@
 				  taht allows you to understand and master various concepts
 				  of Object Oriented Programming in C sharp and Java.</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button" style="border-color: #B56DF2;">View details »</a>
+					<a class="btn btn-default" href="UnderConstruction.aspx" role="button" style="border-color: #B56DF2;">View details »</a>
 				</p>
 			</div>
 		</div><!-- END OF ROW -->

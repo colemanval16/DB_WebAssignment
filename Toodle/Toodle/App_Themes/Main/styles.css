@@ -1,0 +1,15 @@
+﻿body {
+}
+
+#mainContent_imageDiv{
+    margin-top:100px;
+}
+h1{
+    text-align:center;
+}
+
+#mainContent_lockImg{
+        display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
