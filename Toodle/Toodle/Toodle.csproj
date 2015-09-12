@@ -59,10 +59,6 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="AdministratorPage.aspx" />
-    <Content Include="App_Data\ToodleDB.mdf" />
-    <Content Include="App_Data\ToodleDB_log.ldf">
-      <DependentUpon>ToodleDB.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
