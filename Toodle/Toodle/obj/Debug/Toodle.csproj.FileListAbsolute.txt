@@ -1,9 +1,3 @@
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.dll
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.pdb
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll.config
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.pdb
-C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.csprojResolveAssemblyReference.cache
 D:\GIT\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll.config
 D:\GIT\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll
 D:\GIT\DB_WebAssignment\Toodle\Toodle\bin\Toodle.pdb
@@ -16,3 +10,9 @@ C:\Users\valcoleman\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle
 C:\Users\valcoleman\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll.config
 C:\Users\valcoleman\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll
 C:\Users\valcoleman\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.pdb
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll.config
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.dll
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\bin\Toodle.pdb
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.dll
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.pdb
+C:\Users\Art\Source\Repos\DB_WebAssignment\Toodle\Toodle\obj\Debug\Toodle.csprojResolveAssemblyReference.cache
