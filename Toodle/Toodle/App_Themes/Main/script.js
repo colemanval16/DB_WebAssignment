@@ -1,6 +1,8 @@
 
 	$(document).ready(function(){
-	$(".fancybox").fancybox();
+	    $(".fancybox").fancybox({
+	        parent: "form:first"
+	    });
 	})
 	
 google.maps.event.addDomListener(window, 'load', initialize);
