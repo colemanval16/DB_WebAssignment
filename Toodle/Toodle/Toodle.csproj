@@ -59,6 +59,10 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="AdministratorPage.aspx" />
+    <Content Include="App_Data\ToodleDB.mdf" />
+    <Content Include="App_Data\ToodleDB_log.ldf">
+      <DependentUpon>ToodleDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
@@ -245,6 +249,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
