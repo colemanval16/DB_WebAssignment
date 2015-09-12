@@ -1,66 +1,28 @@
 ﻿/* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+
+
+/* --------------- GENERAL PROPERTIES --------------- */
 a:hover, a:active, a:focus {
-   outline:             0;
+   outline:             0 !important;
 }
 .posCenter{
 	text-align:         center;
 }
-
-footer {
-    background-color:rgb(16,16,16);
-}
-
-footer li{
-	list-style-type:    none;
-	display:            inline;
-	padding:            5px;
-}
-
-.tabs ul li a{
-    background-color:    rgb(92, 168, 92);
-    padding:            7px 15px !important;
-    margin-top:         4px;
-    border-top-left-radius: 4px; /* rounding corners of tab head */
-    border-top-right-radius: 4px; /* rounding corners of tab head */
-    color:              white;
-    margin-right:       1px;
-}
-
- ul li a.static.selected{
-     background-color:  #8CF26D;
-     padding:           9px 15px !important;
-     margin-top:        0px;
-     color:             #5A5A5A;
-    }
- ul li a.highlighted{
-     background-color:  #8CF26D;
-     padding:           9px 15px !important;
-     margin-top:        0px;
-    }
-
- #multiTabs{
-    min-height:         500px; 
-    background-color:   #8CF26D;
-    padding:            4%;
-    border-radius: 0px 4px 4px 4px;
-}
-
 #wrapper {
     width:              100%;
 }
 
+
+/* --------------- MAIN NAVIGATION --------------- */
 #nav_bg {
-    height: 83px; 
-    float: left; 
-    position: fixed; 
-    top: 0px; 
-    z-index: 100; 
-    background: transparent -moz-linear-gradient(270deg, rgb(255, 255, 255) 92%, rgba(83, 141, 185, 0) 100%); 
-    left: 8%;
-
-
+    height:             83px; 
+    width:              100%;
+    position:           fixed; 
+    top:                0px; 
+    z-index:            100; 
+    background:         transparent -moz-linear-gradient(270deg, rgb(255, 255, 255) 92%, rgba(83, 141, 185, 0) 100%); 
 }
 .navbar-wrapper {
     position:           fixed;
@@ -68,11 +30,9 @@ footer li{
     left:               0%;
     z-index:            10;
 }
-
 ul.dropdown-menu>li>ul>li>ul {
     display:            none; 
-}
-    
+}   
 ul.dropdown-menu>li:hover>ul {
     display:            block;
 }
@@ -88,17 +48,108 @@ ul.dropdown-menu>li:hover>ul {
      color:             darkgray;
 }
 
+/* --------------- CONTENT-TABBED PANEL --------------- */
+.tabs ul li a{
+    background-color:    rgb(92, 168, 92);
+    padding:            7px 15px !important;
+    margin-top:         4px;
+    border-top-left-radius: 4px; /* rounding corners of tab head */
+    border-top-right-radius: 4px; /* rounding corners of tab head */
+    color:              white;
+    margin-right:       1px;
+}
+ul li a.static.selected{
+     background-color:  #8CF26D;
+     padding:           9px 15px !important;
+     margin-top:        0px;
+     color:             #5A5A5A;
+}
+ul li a.highlighted{
+     background-color:  #8CF26D;
+     padding:           9px 15px !important;
+     margin-top:        0px;
+}
+#tabbedMenu {
+    margin-top:         50px;
+    width:              26%;
+    max-width:          240px;
+    min-width:          206px;
+    float:              left;
+}
+#multiTabs{
+    min-height:         500px; 
+    background-color:   #8CF26D;
+    padding:            4%;
+    border-radius:      0px 4px 0px 0px;
+}
+
+/* --------------- CONTENT- NESTED TABBED PANEL --------------- */
+
+#mainContent_placeholderTabOne_nestedTabbedMenu {
+    float:              none !important;
+}
+#mainContent_placeholderTabOne_nestedTabbedMenu ul {
+    width:              100% !important;
+}
+#mainContent_placeholderTabOne_nestedTabbedMenu ul li a {
+     background-color:  white;
+     padding:           10px 11px !important;
+     color:             #5A5A5A;
+     border-bottom:            1px solid #8CF26D;
+}
+#mainContent_placeholderTabOne_nestedTabbedMenu ul li:first-child a {
+     border-top-left-radius: 4px;
+}
+#mainContent_placeholderTabOne_nestedTabbedMenu ul li:last-child a {
+     border-bottom-left-radius: 4px;
+}
+#mainContent_placeholderTabOne_nestedTabbedMenu ul li a.static.selected {
+     background-color:  #5CA85C;
+     padding:           10px 11px !important;
+     color:             white;
+}
+#nestedMultiTabs {
+    width:              71%;
+    float:              left;
+    padding:            10px 30px;
+    background:         #5CA85C;
+    color:              white;
+    margin-top:         50px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* --------------- FOOTER --------------- */
+
+footer {
+    background-color:rgb(16,16,16);
+    text-align:         center;
+}
+footer li{
+	list-style-type:    none;
+	display:            inline;
+	padding:            5px;
+}
 
 /* Small devices, 768px and up */
 @media (min-width: 768px) {
-
+.container {
+    padding-right:      15px;
+    padding-left:       15px;
+  }
 .navbar-wrapper {
     margin-top:         20px;  /* Detaching navbar from the top */
 }
 .navbar {
-    border-radius:      4px;  /* rounding corners of the navbar */
-  }
-        
+    padding-right:      0px;
+    padding-left:       0px;
+    border-radius:      4px;    /* rounding corners of the navbar */
+}
+footer {
+    border-radius:      0px 0px 4px 4px;
+    padding:            5px 0px;
+    } 
 }
 
 /* Medium devices, 992px and up */
