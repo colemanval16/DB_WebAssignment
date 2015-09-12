@@ -12,7 +12,30 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="courseProgressBar" runat="server">
     <p style="height: 200px;"></p>
     <p>Placeholder for the progress bar...</p>
-</asp:Content>
+</asp:Content>        <h2>Content for Database Fundamentals</h2>
+    <asp:Menu ID="Menu1" runat="server" Orientation="Vertical">
+        <Items>
+            <asp:MenuItem Text="Understandign Core Database Concepts" Value="0" ></asp:MenuItem>
+            <asp:MenuItem Text="Creating Database Objects" Value="1"></asp:MenuItem>
+            <asp:MenuItem Text="Manipulating Data" Value="2"></asp:MenuItem>
+            <asp:MenuItem Text="Understanding Data Storage" Value="3"></asp:MenuItem>
+            <asp:MenuItem Text="Administering a Database" Value="3"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+    <div id="multiTabs">                                                                                           
+        <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+            <asp:View ID="V1" runat="server">
+            </asp:View>
+            <asp:View ID="V2" runat="server">
+            </asp:View>
+            <asp:View ID="V3" runat="server">
+            </asp:View>
+            <asp:View ID="View1" runat="server">
+            </asp:View>
+            <asp:View ID="V5" runat="server">
+            </asp:View>
+        </asp:MultiView>
+    </div>
 <asp:Content ID="Content4" ContentPlaceHolderID="placeholderTabOne" runat="server">
 
     <!----- *****************************CONTENT********************************---------->
@@ -789,7 +812,7 @@ is structured as follows:</p>
         </p>
 
             <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" />
-      </asp:Content>
+</asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="placeholderTabFour" runat="server">
 
     <!----- *****************************PROGRESS********************************---------->
