@@ -116,6 +116,7 @@
     <Content Include="ITnews.aspx" />
     <Content Include="MTAMain.aspx" />
     <Content Include="SoftwareDevelopmentFundamentals.aspx" />
+    <Content Include="sql file\Poodle DB.sql" />
     <Content Include="UnderConstruction.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebDevelopmentFundamentals.aspx" />
