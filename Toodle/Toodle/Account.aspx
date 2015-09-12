@@ -13,9 +13,7 @@
     </div>
 
     <div id="ifLogIn" runat="server">
-        <div class="jumbotron" runat="server">
-            <h1>Hello <asp:Label ID="lblid" runat="server" Text=""></asp:Label></h1>
-        </div>
+       <div ></div>
     </div>
     
 </asp:Content>
