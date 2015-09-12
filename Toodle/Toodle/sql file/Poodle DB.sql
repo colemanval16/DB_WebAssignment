@@ -1,53 +1,85 @@
 --CREATE DATABASE
 CREATE DATABASE ToodleDB
-
+GO
 --Hello World
 
 USE ToodleDB
---------------------------------------------------------------------------------------------Student-----------------------------------------------------------------------------------------------------------Student
---CREATE TABLE Student
-CREATE TABLE Student
+GO
+--------------------------------------------------------------------------------------------Account
+CREATE TABLE Account
+(
+AccountID CHAR(2) PRIMARY KEY,
+AccountType VARCHAR(100)
+)
+GO
+
+--INSERT DATA INTO Account
+INSERT INTO Account (AccountID,AccountType)
+VALUES
+('SA','Student Account'),
+('AA','Administrator Account')
+GO
+--------------------------------------------------------------------------------------------AdministratorAccount
+--CREATE TABLE AdminAccount
+CREATE TABLE AdminAccount
+(
+AdminID VARCHAR(30) PRIMARY KEY,
+AdminFirstname VARCHAR(100) NOT NULL,
+AdminLastname VARCHAR(100) NOT NULL,
+AdminEmail VARCHAR(100) NOT NULL,
+AccountID CHAR(2) NOT NULL FOREIGN KEY REFERENCES Account (AccountID)
+)
+GO
+
+--INSERT DATA INTO AdminAccount
+INSERT INTO AdminAccount (AdminID, AdminFirstname, AdminLastname, AdminEmail,AccountID)
+VALUES
+('Admin001', 'John', 'Smith', 'John001@gmail.com','AA'),
+('Admin002', 'Keanu', 'Reeves', 'Keanu7423@gmail.com','AA'),
+('Admin003','Brad','Pitt','Pitt@hotmail.com','AA')
+GO
+
+--------------------------------------------------------------------------------------------StudentAccount
+--CREATE TABLE StudentAccount
+CREATE TABLE StudentAccount
 (
 StudentID INT PRIMARY KEY,
+StudentPassword VARCHAR(100) NOT NULL,
 StudentFirstname VARCHAR(100) NOT NULL,
 StudentLastname VARCHAR(100) NOT NULL,
-StudentEmail VARCHAR(100) NOT NULL
+StudentEmail VARCHAR(100) NOT NULL,
+AccountID CHAR(2) NOT NULL FOREIGN KEY REFERENCES Account (AccountID)
 )
+GO
 
---INSERT DATA INTO Student
-INSERT INTO Student (StudentID, StudentFirstname, StudentLastname, StudentEmail)
+--INSERT DATA INTO StudentAccount
+INSERT INTO StudentAccount (StudentID,StudentPassword, StudentFirstname, StudentLastname, StudentEmail,AccountID)
 VALUES
-(10275625, 'John', 'Snow', 'Johnsnow@gmail.com'),
-(10275626, 'James', 'Brown', 'Jamesbown@gmail.com'),
-(10270527,'Tony','Kim','TonyKim@hotmail.com'),
-(10275629, 'Sharon', 'Miller','Johnsnow@gmail.com')
+(10275625,'p111', 'John', 'Snow', 'Johnsnow@gmail.com','SA'),
+(10275626, 'p222','James', 'Brown', 'Jamesbown@gmail.com','SA'),
+(10270527,'p333','Tony','Kim','TonyKim@hotmail.com','SA'),
+(10275629, 'p444','Sharon', 'Miller','Johnsnow@gmail.com','SA')
+GO
 
- 
-
-
-	SELECT StudentID,StudentPassword 
-	FROM StudentAccount
-	WHERE StudentID=10275625  AND StudentPassword='p111' 
-drop procedure spCheckIfStudentIDExist
-
-CREATE PROCEDURE spRegisterNewStudentAccount
-@studnetID INT,
-@passwrod VARCHAR(100)
+CREATE PROCEDURE spLogIn
+@studentID INT,
+@password VARCHAR(100)
 AS
 BEGIN
-	INSERT INTO StudentAccount 
-	(StudentID,StudentPassword)
-	VALUES( @studnetID,@passwrod)
+	SELECT StudentFirstname
+	FROM StudentAccount
+	WHERE StudentID=@studentID  AND StudentPassword=@password 
 END
 GO
---------------------------------------------------------------------------------------------StudentAccount-----------------------------------------------------------------------------------------------------------StudentAccount
 
+--------------------------------------------------------------------------------------------CourseCategory
 --CREATE TABLE CourseCategory
 CREATE TABLE CourseCategory
 (
 CourseCategoryID VARCHAR(30) PRIMARY KEY,
 CourseCategoryDescription VARCHAR(200),
 )
+GO
 
 --INSERT DATA INTO CourseCategory
 INSERT INTO CourseCategory (CourseCategoryID, CourseCategoryDescription)
@@ -58,8 +90,8 @@ VALUES
 ('PM','Project management course'),
 ('NW','Network course '),
 ('DB','Database course')
-
---------------------------------------------------------------------------------------------Course-----------------------------------------------------------------------------------------------------------Course
+GO
+--------------------------------------------------------------------------------------------Course
 --CREATE TABLE Course
 CREATE TABLE Course
 (
@@ -69,6 +101,7 @@ CourseDescription VARCHAR(200),
 CourseOptiumDuration INT NOT NULL,
 CourseCategoryID VARCHAR(30) NOT NULL FOREIGN KEY REFERENCES CourseCategory (CourseCategoryID)
 )
+GO
 
 --INSERT DATA INTO Course
 INSERT INTO Course (CourseID, CourseName, CourseDescription, CourseOptiumDuration, CourseCategoryID)
@@ -77,14 +110,15 @@ VALUES
 ('MTA02','MTA_Database',' MTA Training course helps you prepare for MTA Exam 98-364',90,'MTA'),
 ('MTA03','MTA_Software Developement','MTA Training course helps you prepare for MTA Exam 98-361',90,'MTA'),
 ('MTA04','MTA_Software Testing','MTA Training course helps you prepare for MTA Exam 98-379',90,'MTA')
-
---------------------------------------------------------------------------------------------CourseStatus-----------------------------------------------------------------------------------------------------------CourseStatus
+GO
+--------------------------------------------------------------------------------------------CourseStatus
 --CREATE TABLE CourseStatus
 CREATE TABLE CourseStatus
 (
 CourseStatusID VARCHAR(25) PRIMARY KEY,
 CourseStatusDescription VARCHAR(100)
 )
+GO
 
 --INSERT DATA INTO CourseStatus
 INSERT INTO CourseStatus(CourseStatusID,CourseStatusDescription)
@@ -93,8 +127,8 @@ VALUES
 ('Progress','Course is in progress'),
 ('MockExam','User completed the tutorials'),
 ('Completed','User completed the MockExam')
-
---------------------------------------------------------------------------------------------StudentCourse-----------------------------------------------------------------------------------------------------------StudentCourse
+GO
+--------------------------------------------------------------------------------------------StudentCourse
 --CREATE TABLE StudentCourse
 CREATE TABLE StudentCourse
 (
@@ -105,6 +139,7 @@ StudentID INT NOT NULL FOREIGN KEY REFERENCES StudentAccount (StudentID),
 CourseID VARCHAR(10) NOT NULL FOREIGN KEY REFERENCES Course (CourseID),
 CourseStatusID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES CourseStatus (CourseStatusID) DEFAULT 'Added'
 )
+GO
 
 --INSERT DATA INTO StudentCourse
 --When a student clicks the [ADD COURSE] stored procedure is excuting for inserting the new record ----CourseStatusID ADDED IS DEFAULT.
@@ -121,13 +156,7 @@ VALUES
 (GETDATE(),GETDATE()+(SELECT CourseOptiumDuration FROM Course WHERE CourseID = @courseID),@studentID ,@courseID )
 END
 GO
-
---TEST
-EXEC spStudentRegisterCourse 10275625,'MTA01'
-SELECT * FROM StudentCourse
-SELECT * FROM CourseStatusLog
-
---------------------------------------------------------------------------------------------CourseStatusLog-----------------------------------------------------------------------------------------------------------CourseStatusLog
+--------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog
 CREATE TABLE CourseStatusLog
 (
@@ -136,6 +165,7 @@ StudentCourseID  INT FOREIGN KEY REFERENCES StudentCourse(StudentCourseID),
 CourseStatusLogTimeStamp DATETIME NOT NULL,
 PRIMARY KEY(StudentCourseID, CourseStatusID)
 )
+GO
 
 --INSERT INTO DATA INTO CourseStatusLog [trigger]
 CREATE TRIGGER trgAfterStudentCourseInsert
@@ -155,8 +185,8 @@ BEGIN
 
 	PRINT  'StudentCourstLog is inserted'
 END
-
---------------------------------------------------------------------------------------------CourseAttendanceLog--------------------------------------------------------------------------------------------------CourseAttendanceLog
+GO
+--------------------------------------------------------------------------------------------CourseAttendanceLog
 --CREATE TABLE CourseAttendanceLog
 CREATE TABLE CourseAttendanceLog
 (
@@ -166,6 +196,7 @@ CourseID VARCHAR(10),
 FOREIGN KEY(CourseID) REFERENCES Course(CourseID),
 PRIMARY KEY(DateOfReport, CourseID)
 )
+GO
 
 --INSERT DATA INTO CourseAttendanceLog -> Stored Procedure.
 CREATE PROCEDURE spInsertCourseAttendanceLog
@@ -177,8 +208,7 @@ VALUES
 (GETDATE(), (SELECT ISNULL(COUNT (StudentCourseID),0)  FROM StudentCourse WHERE CourseID = @courseID), @courseID)
 END
 GO
---------------------------------------------------------------------------------------------MockExamResultLog--------------------------------------------------------------------------------------------------MockExamResultLog
---CREATE TABLE MockExamResultLog
+--------------------------------------------------------------------------------------------MockExamResultLog
 CREATE TABLE MockExamResultLog
 (
 MockExamResultLogID VARCHAR(25) PRIMARY KEY,
@@ -186,6 +216,7 @@ MockExamDate DATETIME NOT NULL,
 MockExamResult INT NOT NULL,
 StudentCourseID INT FOREIGN KEY REFERENCES StudentCourse (StudentCourseID),
 )
+GO
 
 --Stored procedure for inserting MockExamResultLog
 --When a studnet click a button to SUBMIT after taking a mockexam
@@ -200,17 +231,3 @@ BEGIN
 	VALUES(@id,GETDATE(),@result,@studentCourseID)
 END
 GO
-
-
-
---If we want to have auto increment id with char
-create  TABLE dbo.YourTable
-(ID INT IDENTITY(1,1),
- CharID AS 'WC' + RIGHT('000' + CAST(ID AS VARCHAR(3)), 3) PERSISTED,
- name varchar(10),
- CONSTRAINT PK_YourTable PRIMARY KEY(CharID)
-)
-
-INSERT INTO dbo.YourTable values ('junga')
-
-select * from dbo.YourTable
