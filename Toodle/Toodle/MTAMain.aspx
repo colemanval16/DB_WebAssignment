@@ -1,4 +1,4 @@
-﻿      <%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="MTAMain.aspx.cs" Inherits="Toodle.MTAMain" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="MTAMain.aspx.cs" Inherits="Toodle.MTAMain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
     <title>Toodle - MTA courses available</title>
     <meta name="description" content="List of all MTA courses available on Toodle. Here you can sign up for a course and start it." />
