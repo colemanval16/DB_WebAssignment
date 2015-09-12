@@ -11,7 +11,11 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            nestedTabbedMenu.FindItem("0").Selected = true;
+        }
+        protected void nestedTabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            mvTabs2.ActiveViewIndex = int.Parse(nestedTabbedMenu.SelectedItem.Value);
         }
     }
 }
