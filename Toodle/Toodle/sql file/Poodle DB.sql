@@ -66,7 +66,7 @@ CREATE PROCEDURE spLogIn
 @password VARCHAR(100)
 AS
 BEGIN
-	SELECT StudentFirstname, StudentLastname
+	SELECT StudentFirstname, StudentLastname, StudentID
 	FROM StudentAccount
 	WHERE StudentID=@studentID  AND StudentPassword=@password 
 END

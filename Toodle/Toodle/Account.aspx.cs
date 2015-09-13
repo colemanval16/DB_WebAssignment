@@ -12,26 +12,11 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            imageDiv.Visible = false;
-            string name = (string)Session["name"];
+            string studentID = (string)Session["studentID"];
+            if (studentID != null)
 
-            if(name == null)
-            {
-                 ifLogIn.Visible = false;
-                imageDiv.Visible = true;
-                
-                ////lblid.Text = "Your student id is " + name;
-                //Image myImg = new Image();
-                //myImg.ImageUrl = "Images/lock.png";
-                //myImg.Visible = true;
-
-                //var h1 = new HtmlGenericControl("h1");
-                //h1.InnerHtml = "Please Sign in";
-
-                //imageDiv.Controls.Add(myImg);
-                //imageDiv.Controls.Add(h1);
-            }
-            
+           
+            lblDBStudentID.Text = studentID.ToString();
         }
     }
 }

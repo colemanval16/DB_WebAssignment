@@ -12,19 +12,7 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //loginBox.Visible = false;
-            string name = (string)Session["name"];
-            if (name != null)
-            {
-               
-                ((HtmlGenericControl)this.Page.Master.FindControl("loginBox")).Visible = false;
-                ((HtmlGenericControl)this.Page.Master.FindControl("useraccount")).Visible = true;
-            }
-            else
-            {
 
-                
-            }
         }
     }
 }

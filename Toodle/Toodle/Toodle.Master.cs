@@ -16,33 +16,38 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string name = (string)Session["name"];
+            string firstname = (string)Session["firstName"];
+            string lastname = (string)Session["lastName"];
+
+            //when the page is loaded for the firsttime
             if (!IsPostBack)
             {
+                if (firstname != null)
+                {
+                    accountLink.Visible = true;
+                    lblName.Text = firstname + " " + lastname;
+                    lblName.Visible = true;
+                    loginBox.Visible = false;
+                    accountLink.Visible = true;
 
-                accountLink.Visible = false;
+                }
+                else
+                {
+                    accountLink.Visible = false;
+                }
+                
             }
             else
             {
                 accountLink.Visible = true;
-                lblName.Text = name;
-                lblName.Visible = true;
-                loginBox.Visible = false;
-            }
-
-            if (name != null)
-            {
-                accountLink.Visible = true;
-                lblName.Text = name;
-                lblName.Visible = true;
-                loginBox.Visible = false;
 
             }
+
+                
+            
+
+           
         }
-    
-    
-        
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -63,21 +68,26 @@ namespace Toodle
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
-                        txtPassword.Text = "connected";
+                      
  
                             if (rd.Read())
                             {
-                                txtPassword.Text = "";
-                                txtStudentID.Text = "";
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN OK')", true);
+                                //txtPassword.Text = "";
+                                //txtStudentID.Text = "";
+                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
                                 useraccount.Visible = true;
                                 loginBox.Visible = false;
-                                lblName.Text = "Hello " +rd.GetValue(0).ToString();
-                                Session.Add("name", rd.GetValue(0).ToString());
+                                lblName.Text = rd.GetValue(0).ToString()+" "+ rd.GetValue(1).ToString();
+                                //Session.Add();
+                                Session.Add("firstName", rd.GetValue(0).ToString());
+                                Session.Add("lastName", rd.GetValue(1).ToString());
+                                Session.Add("studentID", rd.GetValue(2).ToString());
                             }
                             else
                             {
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN fail')", true);
+                                useraccount.Visible = false;
+                                loginBox.Visible = true;
+                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Login Failed')", true);
                             }
                     }
                 }
