@@ -70,6 +70,17 @@ BEGIN
 	FROM StudentAccount
 	WHERE StudentID=@studentID  AND StudentPassword=@password 
 END
+GO
+
+CREATE PROCEDURE spGetStudentAccountInfo
+@studentID INT
+AS
+BEGIN
+	SELECT StudentID, StudentFirstname, StudentLastname, StudentEmail 
+	FROM StudentAccount
+	WHERE StudentID=@studentID
+END
+GO
 --------------------------------------------------------------------------------------------CourseCategory
 --CREATE TABLE CourseCategory
 CREATE TABLE CourseCategory
@@ -152,6 +163,17 @@ INSERT INTO StudentCourse
 (CourseStartDate,CourseEndDate,StudentID,CourseID)
 VALUES 
 (GETDATE(),GETDATE()+(SELECT CourseOptiumDuration FROM Course WHERE CourseID = @courseID),@studentID ,@courseID )
+END
+GO
+
+--Get infomation of studnet's enrolled course
+CREATE PROCEDURE spGetStudentCourseInformation
+@studentID INT
+AS
+BEGIN
+SELECT CourseID,CourseStartDate,CourseEndDate,CourseStatusID
+FROM StudentCourse
+WHERE StudentID = @studentID
 END
 GO
 --------------------------------------------------------------------------------------------CourseStatusLog

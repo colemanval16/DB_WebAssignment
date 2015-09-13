@@ -17,7 +17,7 @@
 <div class="container-fluid">
 
 
-<br/><br/><br/><br/>
+<br/><br/><br/><br/><br /><br />
     <div class="row">
 	    <div class="col-md-3">       
            <br /> 
@@ -31,19 +31,19 @@
             <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
             <asp:Label ID="lblStudentID" class="studnetInfolbl" runat="server" Text="Student ID : "></asp:Label>
-            <asp:Label ID="lblDBStudentID" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblDBStudentID" class="studentInfoDBlbl" runat="server" Text=""></asp:Label>
             <br />
             <br />
             <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
-            <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label>
-            <asp:Label ID="lblDBName" runat="server" Text="name"></asp:Label>
+            <asp:Label ID="lblName" class="studnetInfolbl" runat="server" Text="Name : "></asp:Label>
+            <asp:Label ID="lblDBName" class="studentInfoDBlbl" runat="server" Text=""></asp:Label>
             <br />
             <br />
             <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
-            <asp:Label ID="lblEmail" runat="server" Text="Email : "></asp:Label>
-            <asp:Label ID="lblDBEmail" runat="server" Text="Email : "></asp:Label>
+            <asp:Label ID="lblEmail" class="studnetInfolbl" runat="server" Text="Email : "></asp:Label>
+            <asp:Label ID="lblDBEmail" class="studentInfoDBlbl" runat="server" Text=""></asp:Label>
         </div>
     </div>
 <br />
