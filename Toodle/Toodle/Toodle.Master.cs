@@ -19,7 +19,7 @@ namespace Toodle
             string name = (string)Session["name"];
             if (!IsPostBack)
             {
-               
+
                 accountLink.Visible = false;
             }
             else
@@ -27,7 +27,7 @@ namespace Toodle
                 accountLink.Visible = true;
                 lblName.Text = name;
                 lblName.Visible = true;
-                loginBox.Visible = false;              
+                loginBox.Visible = false;
             }
 
             if (name != null)
@@ -36,9 +36,10 @@ namespace Toodle
                 lblName.Text = name;
                 lblName.Visible = true;
                 loginBox.Visible = false;
-               
+
             }
-            }
+        }
+    
     
         
 
