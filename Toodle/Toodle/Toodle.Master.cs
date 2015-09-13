@@ -8,6 +8,7 @@ using System.Web.Configuration;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace Toodle
 {
@@ -15,8 +16,31 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // useraccount.Visible = false;
-        }
+            string name = (string)Session["name"];
+            if (!IsPostBack)
+            {
+               
+                accountLink.Visible = false;
+            }
+            else
+            {
+                accountLink.Visible = true;
+                lblName.Text = name;
+                lblName.Visible = true;
+                loginBox.Visible = false;              
+            }
+
+            if (name != null)
+            {
+                accountLink.Visible = true;
+                lblName.Text = name;
+                lblName.Visible = true;
+                loginBox.Visible = false;
+               
+            }
+            }
+    
+        
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -32,14 +56,7 @@ namespace Toodle
                         int id = 0;
                         bool a = Int32.TryParse(txtStudentID.Text, out id);
                         string password = txtPassword.Text;
-                        ////int id = Convert.ToInt32(txtStudentID.Text);
-                        //SqlParameter idParam = new SqlParameter("@studentID", SqlDbType.Int);
-                        //idParam.Value = a;
-                        //cmd.Parameters.Add(idParam);
 
-                        //SqlParameter passwrodParam = new SqlParameter("@password", SqlDbType.VarChar);
-                        //passwrodParam.Value = password;
-                        //cmd.Parameters.Add(passwrodParam);
                         cmd.Parameters.AddWithValue("@studentID", id);
                         cmd.Parameters.AddWithValue("@password", password);
                         con.Open();
@@ -54,7 +71,6 @@ namespace Toodle
                                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN OK')", true);
                                 useraccount.Visible = true;
                                 loginBox.Visible = false;
-                                //accountLink.Visible = true;
                                 lblName.Text = "Hello " +rd.GetValue(0).ToString();
                                 Session.Add("name", rd.GetValue(0).ToString());
                             }
