@@ -14,8 +14,7 @@
     <p>Placeholder for the progress bar...</p>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="placeholderTabOne" runat="server">
-    <h2 style="text-align:center;">Content for Database Fundamentals</h2>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>    
+    <h2 style="text-align:center;">Content for Database Fundamentals</h2>  
     <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div id="tabbedMenu">
@@ -28,8 +27,8 @@
                         <asp:MenuItem Text="Administering a Database" Value="4"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
-                    </div>    
-                <div id="nestedMultiTabs">                                                                                 
+            </div> <!-- closing DIV tabbedMenu -->   
+            <div id="nestedMultiTabs">                                                                                 
                     <asp:MultiView ID="mvTabs2" runat="server" ActiveViewIndex="0">
                         <asp:View ID="View1" runat="server">
                             <!----------------------------Section 1---------------------------------------------->
@@ -436,14 +435,14 @@
                             </ul>
                         </asp:View>
                     </asp:MultiView>
-                </div>
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="nestedTabbedMenu"/>                
-            </Triggers>
-        </asp:UpdatePanel>     
-        <asp:Button ID="btnCourseContentComplete" runat="server" Text="To access Tutorials" />
-    </asp:Content>
+                </div> <!-- closing DIV nestedMultiTabs -->  
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="nestedTabbedMenu"/>                
+        </Triggers>
+    </asp:UpdatePanel>     
+    <asp:Button ID="btnCourseContentComplete" runat="server" Text="To access Tutorials" />
+</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="placeholderTabTwo" runat="server">
      <h2 style="margin-bottom:30px">Video Tutorials for revision:</h2>
     <p><strong>Microsoft MTA Database Administration Fundamentals: Exam 98-364 - Sample Lesson</strong></p>
