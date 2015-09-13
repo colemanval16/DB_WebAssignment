@@ -105,7 +105,7 @@
     <Content Include="DatabaseFundamentals.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
-    <Content Include="Images\courseInfoIcon.png" />
+    <Content Include="Images\courseListIcon.png" />
     <Content Include="Images\email5.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />

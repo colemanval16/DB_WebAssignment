@@ -7,6 +7,8 @@
     margin-right: auto;
 }
 
-.label{
+.studnetInfolbl{
     color:red;
+    font-weight:bold;
+    font-size:110%;
 }

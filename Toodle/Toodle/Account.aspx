@@ -21,20 +21,24 @@
     <div class="row">
 	    <div class="col-md-3">       
            <br /> 
-            <img src="Images/studentInfoIcon.png" class="img-responsive accountImage" alt="Cinque Terre"/>  
+            <img src="Images/studentInfoIcon.png" class="img-responsive accountImage" alt="student Info Icon"/>  
         </div>
 
          <div class="col-md-6">
             <br />
             <br />
+            <br />
+            <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
-            <asp:Label ID="lblStudentID" class="label" runat="server" Text="Student ID : "></asp:Label>
+            <asp:Label ID="lblStudentID" class="studnetInfolbl" runat="server" Text="Student ID : "></asp:Label>
             <asp:Label ID="lblDBStudentID" runat="server" Text=""></asp:Label>
+            <br />
             <br />
             <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
             <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label>
             <asp:Label ID="lblDBName" runat="server" Text="name"></asp:Label>
+            <br />
             <br />
             <br />
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;
@@ -48,21 +52,27 @@
     <div="row">
          <div class="col-md-6">
             
-            <table class="table table-hover">
+            <table class="table table-hover" id="courseInformationTable" runat="server">
                 <tr>
                     <th>CourseID</th>
-                    <th>Course Name</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Course Status</th>
-
                 </tr>
            </table>
+             
+            <div id="noCourseEnrolled" runat="server">
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <h3><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;&nbsp;You have not enrolled any courses</h3>
+            </div>
         </div>
         <div class="col-md-3">       
-           <br /> 
-            <img src="Images/studentInfoIcon.png" class="img-responsive accountImage" alt="Cinque Terre"/>
-            
+           <br />
+            <img src="Images/courseListIcon.png" class="img-responsive accountImage" alt="course List Icon"/>
        
         </div>
     </div>
