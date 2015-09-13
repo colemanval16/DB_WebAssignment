@@ -4,6 +4,10 @@
 
 
 /* --------------- GENERAL PROPERTIES --------------- */
+body {
+  padding-bottom: 40px;
+  color: #5A5A5A;
+}
 a:hover, a:active, a:focus {
    outline:             0 !important;
 }
@@ -44,13 +48,13 @@ ul.dropdown-menu>li:hover>ul {
      top:               50px;
      left:              -96px;
      padding:           5px 13px;
-     background:        rgb(255, 255, 255);
+     background:        white;
      color:             darkgray;
 }
 
 /* --------------- CONTENT-TABBED PANEL --------------- */
 .tabs ul li a{
-    background-color:    rgb(92, 168, 92);
+    background-color:   rgb(92, 168, 92);
     padding:            7px 15px !important;
     margin-top:         4px;
     border-top-left-radius: 4px; /* rounding corners of tab head */
