@@ -16,6 +16,10 @@ namespace Toodle
         protected void nestedTabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             mvTabs2.ActiveViewIndex = int.Parse(nestedTabbedMenu.SelectedItem.Value);
+
+            //OR:
+            //int index = Int32.Parse(e.Item.Value);
+            //mvTabs2.ActiveViewIndex = index;
         }
     }
 }
