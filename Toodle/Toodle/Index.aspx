@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Toodle.Index" %>
+﻿  <%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Toodle.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
     <meta name="description" content="List of six categories of courses offered by Toodle" />
     <title>Toodle - Main Page</title>
@@ -61,7 +61,7 @@
 				<p>Microsoft Technology Associate (MTA) is a set of entry-level 
 				   IT certification exams offered by Microsoft. Exams are available 
 				   in three different tracks: IT infrastructure, database, and development.</p>
-				<p>
+				<%--<p>--%>
 					<a class="btn btn-default" href="MTAMain.aspx" role="button" style="border-color: #8CF26D;">View details »</a>
 				</p>
 			</div>

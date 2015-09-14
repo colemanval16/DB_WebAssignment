@@ -8,6 +8,7 @@ using System.Web.Configuration;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace Toodle
 {
@@ -15,9 +16,39 @@ namespace Toodle
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // useraccount.Visible = false;
-        }
+            string firstname = (string)Session["firstName"];
+            string lastname = (string)Session["lastName"];
 
+            //when the page is loaded for the firsttime
+            if (!IsPostBack)
+            {
+                if (firstname != null)
+                {
+                    accountLink.Visible = true;
+                    lblName.Text = firstname + " " + lastname;
+                    lblName.Visible = true;
+                    loginBox.Visible = false;
+                    accountLink.Visible = true;
+
+                }
+                else
+                {
+                    accountLink.Visible = false;
+
+                }
+                
+            }
+            else
+            {
+                accountLink.Visible = true;
+
+            }
+
+                
+            
+
+           
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -32,36 +63,33 @@ namespace Toodle
                         int id = 0;
                         bool a = Int32.TryParse(txtStudentID.Text, out id);
                         string password = txtPassword.Text;
-                        ////int id = Convert.ToInt32(txtStudentID.Text);
-                        //SqlParameter idParam = new SqlParameter("@studentID", SqlDbType.Int);
-                        //idParam.Value = a;
-                        //cmd.Parameters.Add(idParam);
 
-                        //SqlParameter passwrodParam = new SqlParameter("@password", SqlDbType.VarChar);
-                        //passwrodParam.Value = password;
-                        //cmd.Parameters.Add(passwrodParam);
                         cmd.Parameters.AddWithValue("@studentID", id);
                         cmd.Parameters.AddWithValue("@password", password);
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
-                        txtPassword.Text = "connected";
- 
-                            if (rd.Read())
-                            {
-                                txtPassword.Text = "";
-                                txtStudentID.Text = "";
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN OK')", true);
-                                useraccount.Visible = true;
-                                loginBox.Visible = false;
-                                //accountLink.Visible = true;
-                                lblName.Text = "Hello " +rd.GetValue(0).ToString();
-                                Session.Add("name", rd.GetValue(0).ToString());
-                            }
-                            else
-                            {
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "aaa", "alert('LOGIN fail')", true);
-                            }
+
+
+                        if (rd.Read())
+                        {
+                            //txtPassword.Text = "";
+                            //txtStudentID.Text = "";
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
+                            useraccount.Visible = true;
+                            loginBox.Visible = false;
+                            lblName.Text = rd.GetValue(0).ToString() + " " + rd.GetValue(1).ToString();
+                            //Session.Add();
+                            Session.Add("firstName", rd.GetValue(0).ToString());
+                            Session.Add("lastName", rd.GetValue(1).ToString());
+                            Session.Add("studentID", rd.GetValue(2).ToString());
+                        }
+                        else
+                        {
+                            useraccount.Visible = false;
+                            loginBox.Visible = true;
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Login Failed')", true);
+                        }
                     }
                 }
 
