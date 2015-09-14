@@ -43,7 +43,7 @@
             <div id="contactForm" class="col-md-5 col-sm-12"> 
                 <h3 class="posCenter">Contact Us:</h3>
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>    
-                <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>         
                         <%--<asp:ValidationSummary ID="ValidationSummary1" runat="server" />--%>
                     <asp:Label ID="lblFName" runat="server" Text="First Name:"></asp:Label>

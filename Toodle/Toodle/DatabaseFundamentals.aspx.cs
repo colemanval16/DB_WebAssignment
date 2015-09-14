@@ -100,7 +100,7 @@ namespace Toodle
                                 rdMock19.ClearSelection();
                                 rdMock20.ClearSelection();
 
-                                lblShowResult.Text = "Your score on this attempt was: " + result;
+                                //lblShowResult.Text = "Your score on this attempt was: " + result;
                             }
 
                         }

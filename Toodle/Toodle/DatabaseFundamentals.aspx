@@ -15,7 +15,6 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="placeholderTabOne" runat="server">
             <h2 style="text-align:center;">Content for Database Fundamentals</h2>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div id="tabbedMenu">
     <asp:Menu ID="nestedTabbedMenu" runat="server" Orientation="Vertical" OnMenuItemClick="nestedTabbedMenu_MenuItemClick">
         <Items>

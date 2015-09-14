@@ -116,7 +116,6 @@
     <Content Include="Index.aspx" />
     <Content Include="ITnews.aspx" />
     <Content Include="MTAMain.aspx" />
-    <Content Include="SoftwareDevelopmentFundamentals.aspx" />
     <Content Include="sql file\Poodle DB.sql" />
     <Content Include="sql file\ToodleDB v2.sql" />
     <Content Include="sql file\toodleDbDiagram.PNG" />
@@ -124,7 +123,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebDevelopmentFundamentals.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.aspx.cs">
@@ -183,13 +181,6 @@
     <Compile Include="MTAMain.aspx.designer.cs">
       <DependentUpon>MTAMain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SoftwareDevelopmentFundamentals.aspx.cs">
-      <DependentUpon>SoftwareDevelopmentFundamentals.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SoftwareDevelopmentFundamentals.aspx.designer.cs">
-      <DependentUpon>SoftwareDevelopmentFundamentals.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ToodleCourse.master.cs">
       <DependentUpon>ToodleCourse.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,13 +202,6 @@
     </Compile>
     <Compile Include="UnderConstruction.aspx.designer.cs">
       <DependentUpon>UnderConstruction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebDevelopmentFundamentals.aspx.cs">
-      <DependentUpon>WebDevelopmentFundamentals.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebDevelopmentFundamentals.aspx.designer.cs">
-      <DependentUpon>WebDevelopmentFundamentals.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
