@@ -41,8 +41,8 @@
                 </div>
               </div>
 
-    
-            <div class="row contact">
+            <hr />
+            <div class="row">
                 <div class="col-md-4 col-sm-6 posCenter">
                    
                         <h3 style="color: #6DB5F2;">Contact Us:</h3>
