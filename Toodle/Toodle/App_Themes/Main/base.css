@@ -127,13 +127,54 @@ ul li a.highlighted{
 /* --------------- FOOTER --------------- */
 
 footer {
-    background-color:rgb(16,16,16);
+    background-color:   rgb(16,16,16);
     text-align:         center;
 }
 footer li{
 	list-style-type:    none;
 	display:            inline;
 	padding:            5px;
+}
+
+/* --------------- CONTACT FORM --------------- */
+#contactsContainer {
+    background:         #F2F3E7;
+    padding-top:        100px;
+}
+#contactForm {
+    padding-left:       5%;
+    margin-bottom:      50px;
+}
+#contactForm h3 {
+    color:              #6DB5F2;
+}
+#mainContent_UpdatePanel {
+    border:             1px solid #808080;
+    padding-left:       15%;
+    padding-top:        35px;
+}
+#locationmap {
+    height:             500px; 
+    width:              92%;
+    margin-right:       4%;
+    margin-bottom:      40px;
+    border: 1px solid #808080;
+}
+
+#mainContent_btnSubmit {
+    float:              right;
+    margin-right:       7%;
+}
+#mainContent_btnClear {
+    float:              right;
+    margin-right:       2%;
+}
+#mainContent_lblDisplayMessage {
+    position:           relative;
+    top:                -39px;
+    color:              rgb(22, 150, 210);
+    left:               7px;
+    float:              left;
 }
 
 /* Small devices, 768px and up */

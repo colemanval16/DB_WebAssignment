@@ -13,13 +13,22 @@ namespace Toodle {
     public partial class Contact {
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
         
         /// <summary>
         /// lblFName control.
@@ -211,12 +220,12 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// DisplayMessage control.
+        /// lblDisplayMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DisplayMessage;
+        protected global::System.Web.UI.WebControls.Label lblDisplayMessage;
     }
 }

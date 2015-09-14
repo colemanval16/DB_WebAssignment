@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail; 
 using System.Net;
 
 namespace Toodle
@@ -14,55 +15,61 @@ namespace Toodle
         {
 
         }
-            protected void SendMail()
+
+        protected void SendMail(object sender, EventArgs e)
         {
- 
-            // Gmail Address from where you send the mail
-            string fromAddress = "colemanval16@gmail.com";
-            // any address where the email will be sending
-            string toAddress = txtEmail.Text.ToString();
-            //Password of your gmail address
-            const string fromPassword = "Kohsamu1";
-            // Passing the values and make a email formate to display
-            string subject = txtStudentNo.Text.ToString();
-            string body = "From: " + txtFName.Text + " " + txtLName + "\n";
-            body += "Email: " + txtEmail.Text + "\n";
-            body += "Student Number: " + txtStudentNo.Text + "\n";
-            body += "Message: \n" + txtMsg.Text + "\n";
-            // smtp settings
-            var smtp = new System.Net.Mail.SmtpClient();
+            if (!IsValid)
             {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                smtp.Timeout = 20000;
+                return;
             }
-            // Passing values to smtp object
-            smtp.Send(fromAddress, toAddress, subject, body);
+            else
+            {
+                try
+                {
+                    MailMessage msg = new MailMessage();
+                    msg.To.Add("toodle.contact@gmail.com");
+                    //msg.CC.Add("art1234575@gmail.com"));
+                    msg.From = new MailAddress(txtEmail.Text);
+                    msg.Subject = "Contact form query from: " + txtFName.Text + " " + txtLName.Text + ", Student No: " + txtStudentNo.Text;
+                    msg.Body = txtMsg.Text;
+
+                    using (var client = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        Credentials = new NetworkCredential("toodle.contact@gmail.com", "toodle.contact@"),
+                        EnableSsl = true
+                    })
+                    {
+                        client.Send(msg);
+                    }
+                    lblDisplayMessage.Text = "Your message was sent!";
+                    Reset();
+                }
+                catch (Exception ex)
+                {
+                    lblDisplayMessage.Text = ex.Message;
+                }
+            }
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnClear_Click(object sender, EventArgs e)
         {
-            try
+            if (txtEmail.Text.Equals("") || txtFName.Text.Equals("") || txtLName.Text.Equals("") || txtMsg.Text.Equals("") || txtStudentNo.Equals(""))
             {
-                //here on button click what will done 
-                SendMail();
-                DisplayMessage.Text = "Your message has been sent, a lecturer will be in contact shortly.";
-                DisplayMessage.Visible = true;
-                txtFName.Text = "";
-                txtLName.Text = "";
-                txtEmail.Text = "";
-                txtStudentNo.Text = "";
-                txtMsg.Text = "";
+                Reset();
             }
-            catch (Exception ex)
+            else
             {
-
-                Console.WriteLine(ex.Message);
+                return;
             }
         }
-        
+
+        protected void Reset()
+        {
+            txtFName.Text = "";
+            txtLName.Text = "";
+            txtEmail.Text = "";
+            txtStudentNo.Text = "";
+            txtMsg.Text = "";
+        }
     }
 }
