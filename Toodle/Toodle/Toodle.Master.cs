@@ -18,7 +18,7 @@ namespace Toodle
         {
             string firstname = (string)Session["firstName"];
             string lastname = (string)Session["lastName"];
-             string accountType = (string)Session["accountType"];
+            string accountType = (string)Session["accountType"];
             //when the page is loaded for the firsttime
             if (!IsPostBack)
             {
@@ -32,34 +32,25 @@ namespace Toodle
                         accountLink.Visible = true;
                         adminAccountLink.Visible = false;
                     }
-                    if(accountType =="AA")
+                    if (accountType == "AA")
                     {
                         accountLink.Visible = false;
                         adminAccountLink.Visible = true;
                     }
-                    
-
                 }
                 else
                 {
                     accountLink.Visible = false;
                     adminAccountLink.Visible = false;
-
-
                 }
-                
             }
             else
             {
-                accountLink.Visible = true;
+                //accountLink.Visible = true;
                 adminAccountLink.Visible = true;
 
             }
 
-                
-            
-
-           
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -86,23 +77,23 @@ namespace Toodle
                         {
                             string accountType = rd.GetValue(3).ToString();
 
-                            if(accountType == "SA")
+                            if (accountType == "SA")
                             {
                                 useraccount.Visible = true;
                                 adminAccountLink.Visible = false;
                                 accountLink.Visible = true;
                             }
 
-                            if(accountType == "AA")
+                            if (accountType == "AA")
                             {
                                 useraccount.Visible = true;
                                 adminAccountLink.Visible = true;
                                 accountLink.Visible = false;
-                               
+
                             }
                             loginBox.Visible = false;
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
-                           
+
                             lblName.Text = rd.GetValue(1).ToString() + " " + rd.GetValue(2).ToString();
                             Session.Add("firstName", rd.GetValue(1).ToString());
                             Session.Add("lastName", rd.GetValue(2).ToString());
@@ -125,5 +116,5 @@ namespace Toodle
             }
         }
 
-        }
     }
+}

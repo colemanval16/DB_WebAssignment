@@ -40,7 +40,7 @@ namespace Toodle
                         cmd.CommandType = CommandType.StoredProcedure;
 
 
-                        cmd.Parameters.AddWithValue("@accountID", int.Parse(accountID));
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
