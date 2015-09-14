@@ -34,6 +34,7 @@ namespace Toodle
                 else
                 {
                     accountLink.Visible = false;
+
                 }
                 
             }
@@ -68,27 +69,27 @@ namespace Toodle
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
-                      
- 
-                            if (rd.Read())
-                            {
-                                //txtPassword.Text = "";
-                                //txtStudentID.Text = "";
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
-                                useraccount.Visible = true;
-                                loginBox.Visible = false;
-                                lblName.Text = rd.GetValue(0).ToString()+" "+ rd.GetValue(1).ToString();
-                                //Session.Add();
-                                Session.Add("firstName", rd.GetValue(0).ToString());
-                                Session.Add("lastName", rd.GetValue(1).ToString());
-                                Session.Add("studentID", rd.GetValue(2).ToString());
-                            }
-                            else
-                            {
-                                useraccount.Visible = false;
-                                loginBox.Visible = true;
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Login Failed')", true);
-                            }
+
+
+                        if (rd.Read())
+                        {
+                            //txtPassword.Text = "";
+                            //txtStudentID.Text = "";
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
+                            useraccount.Visible = true;
+                            loginBox.Visible = false;
+                            lblName.Text = rd.GetValue(0).ToString() + " " + rd.GetValue(1).ToString();
+                            //Session.Add();
+                            Session.Add("firstName", rd.GetValue(0).ToString());
+                            Session.Add("lastName", rd.GetValue(1).ToString());
+                            Session.Add("studentID", rd.GetValue(2).ToString());
+                        }
+                        else
+                        {
+                            useraccount.Visible = false;
+                            loginBox.Visible = true;
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Login Failed')", true);
+                        }
                     }
                 }
 

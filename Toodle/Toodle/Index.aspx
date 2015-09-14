@@ -52,7 +52,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="mainContent" runat="server">
     
 	<!-- short entries with the links to the courses -->
-    <div class="container">
+    <div class="wrapper">
 		<div class="row">
 			<div class="col-md-4 col-sm-6 posCenter">
 				<img class="img-circle" src="images/mtaLogo.png" alt="MTA Logo">
@@ -60,7 +60,7 @@
 				<p>Microsoft Technology Associate (MTA) is a set of entry-level 
 				   IT certification exams offered by Microsoft. Exams are available 
 				   in three different tracks: IT infrastructure, database, and development.</p>
-				<p>
+				<%--<p>--%>
 					<a class="btn btn-default" href="MTAMain.aspx" role="button" style="border-color: #8CF26D;">View details »</a>
 				</p>
 			</div>

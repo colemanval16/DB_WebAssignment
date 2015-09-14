@@ -12,7 +12,7 @@
 	<div style="height: 100px; margin-bottom:40px"></div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="mainContent" runat="server">
-        <div class="container">
+        <div class="wrapper">
 
             <div class="row" style="margin-bottom:40px">
                 <div class="posCenter" style="margin-bottom:80px">

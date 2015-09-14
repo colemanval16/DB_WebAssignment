@@ -118,6 +118,7 @@
     <Content Include="MTAMain.aspx" />
     <Content Include="SoftwareDevelopmentFundamentals.aspx" />
     <Content Include="sql file\Poodle DB.sql" />
+    <Content Include="sql file\ToodleDB v2.sql" />
     <Content Include="sql file\toodleDbDiagram.PNG" />
     <Content Include="UnderConstruction.aspx" />
     <Content Include="Web.config" />
