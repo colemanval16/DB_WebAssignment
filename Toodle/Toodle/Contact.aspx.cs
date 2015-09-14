@@ -28,10 +28,10 @@ namespace Toodle
                 {
                     MailMessage msg = new MailMessage();
                     msg.To.Add("toodle.contact@gmail.com");
-                    //msg.CC.Add("art1234575@gmail.com"));
+                    msg.CC.Add("art1234575@gmail.com");
                     msg.From = new MailAddress(txtEmail.Text);
                     msg.Subject = "Contact form query from: " + txtFName.Text + " " + txtLName.Text + ", Student No: " + txtStudentNo.Text;
-                    msg.Body = txtMsg.Text;
+                    msg.Body = txtMsg.Text + "\nFrom email: " + msg.From;
 
                     using (var client = new SmtpClient("smtp.gmail.com", 587)
                     {
@@ -46,20 +46,9 @@ namespace Toodle
                 }
                 catch (Exception ex)
                 {
-                    lblDisplayMessage.Text = ex.Message;
+                    //lblDisplayMessage.Text = ex.Message;
+                    lblDisplayMessage.Text = "Failed. Try again.";
                 }
-            }
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            if (txtEmail.Text.Equals("") || txtFName.Text.Equals("") || txtLName.Text.Equals("") || txtMsg.Text.Equals("") || txtStudentNo.Equals(""))
-            {
-                Reset();
-            }
-            else
-            {
-                return;
             }
         }
 

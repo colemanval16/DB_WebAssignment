@@ -97,14 +97,12 @@
                     <br />
                     <br />    
                         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="SendMail" />
-                        <%--<asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />--%>
                     <br />
                     <br />
                         <asp:Label ID="lblDisplayMessage" runat="server" Text=""></asp:Label>
                     </ContentTemplate>
                     <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="btnSubmit"/>
-                       <%-- <asp:AsyncPostBackTrigger ControlID="btnClear"/>--%>               
+                        <asp:AsyncPostBackTrigger ControlID="btnSubmit"/>              
                     </Triggers>
                 </asp:UpdatePanel> 
             <%-------------------- END CONTACT FORM ----------------------%>
