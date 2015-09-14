@@ -18,22 +18,33 @@ namespace Toodle
         {
             string firstname = (string)Session["firstName"];
             string lastname = (string)Session["lastName"];
-
+             string accountType = (string)Session["accountType"];
             //when the page is loaded for the firsttime
             if (!IsPostBack)
             {
                 if (firstname != null)
                 {
-                    accountLink.Visible = true;
                     lblName.Text = firstname + " " + lastname;
                     lblName.Visible = true;
                     loginBox.Visible = false;
-                    accountLink.Visible = true;
+                    if (accountType == "SA")
+                    {
+                        accountLink.Visible = true;
+                        adminAccountLink.Visible = false;
+                    }
+                    if(accountType =="AA")
+                    {
+                        accountLink.Visible = false;
+                        adminAccountLink.Visible = true;
+                    }
+                    
 
                 }
                 else
                 {
                     accountLink.Visible = false;
+                    adminAccountLink.Visible = false;
+
 
                 }
                 
@@ -41,6 +52,7 @@ namespace Toodle
             else
             {
                 accountLink.Visible = true;
+                adminAccountLink.Visible = true;
 
             }
 
@@ -60,11 +72,10 @@ namespace Toodle
                     {
 
                         cmd.CommandType = CommandType.StoredProcedure;
-                        int id = 0;
-                        bool a = Int32.TryParse(txtStudentID.Text, out id);
+                        string id = txtaccountID.Text;
                         string password = txtPassword.Text;
 
-                        cmd.Parameters.AddWithValue("@studentID", id);
+                        cmd.Parameters.AddWithValue("@accountID", id);
                         cmd.Parameters.AddWithValue("@password", password);
                         con.Open();
 
@@ -73,16 +84,30 @@ namespace Toodle
 
                         if (rd.Read())
                         {
-                            //txtPassword.Text = "";
-                            //txtStudentID.Text = "";
-                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
-                            useraccount.Visible = true;
+                            string accountType = rd.GetValue(3).ToString();
+
+                            if(accountType == "SA")
+                            {
+                                useraccount.Visible = true;
+                                adminAccountLink.Visible = false;
+                                accountLink.Visible = true;
+                            }
+
+                            if(accountType == "AA")
+                            {
+                                useraccount.Visible = true;
+                                adminAccountLink.Visible = true;
+                                accountLink.Visible = false;
+                               
+                            }
                             loginBox.Visible = false;
-                            lblName.Text = rd.GetValue(0).ToString() + " " + rd.GetValue(1).ToString();
-                            //Session.Add();
-                            Session.Add("firstName", rd.GetValue(0).ToString());
-                            Session.Add("lastName", rd.GetValue(1).ToString());
-                            Session.Add("studentID", rd.GetValue(2).ToString());
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
+                           
+                            lblName.Text = rd.GetValue(1).ToString() + " " + rd.GetValue(2).ToString();
+                            Session.Add("firstName", rd.GetValue(1).ToString());
+                            Session.Add("lastName", rd.GetValue(2).ToString());
+                            Session.Add("accountID", rd.GetValue(0).ToString());
+                            Session.Add("accountType", rd.GetValue(3).ToString());
                         }
                         else
                         {

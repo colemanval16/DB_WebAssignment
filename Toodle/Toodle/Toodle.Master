@@ -94,15 +94,16 @@
                      <div id="useraccount" style="float: right" runat="server">
                         <ul>
                              <li style="list-style-type: none;"><asp:Label ID="lblName" runat="server" Text=""  style="color: #ffffff"></asp:Label></li>                          
-                            <li style="list-style-type: none;"><a href="Account.aspx" id="accountLink" runat="server" title="useraccount">Account</a></li>                         
+                            <li style="list-style-type: none;"><a href="Account.aspx" id="accountLink" runat="server" title="useraccount">Account</a></li>  
+                              <li style="list-style-type: none;"><a href="Account.aspx" id="adminAccountLink" runat="server" title="Admin account">Admin Account</a></li>                                                
                         </ul>                        
                     </div>
 
                         <div class="dropdown" id="loginBox" runat="server" style="float: right; padding-top: 15px;">
                             <a style="color: white; padding: 15px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
                             <div class="dropdown-menu" id="login">
-                                <asp:Label ID="lblStudentID" runat="server" Text="Student ID"></asp:Label>
-                                <asp:TextBox ID="txtStudentID" runat="server"></asp:TextBox>
+                                <asp:Label ID="lblaccountID" runat="server" Text="ID"></asp:Label>
+                                <asp:TextBox ID="txtaccountID" runat="server"></asp:TextBox>
                                 <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
                                 <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" Wrap="True"></asp:TextBox>
                                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />

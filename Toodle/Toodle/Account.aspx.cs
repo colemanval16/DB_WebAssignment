@@ -13,11 +13,11 @@ namespace Toodle
 {
     public partial class Account : System.Web.UI.Page
     {
-        string studentID;
+        string accountID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            studentID = (string)Session["studentID"];
-            if (studentID != null)
+            accountID = (string)Session["accountID"];
+            if (accountID != null)
 
             {
                 getStudentInfo();
@@ -40,7 +40,7 @@ namespace Toodle
                         cmd.CommandType = CommandType.StoredProcedure;
 
 
-                        cmd.Parameters.AddWithValue("@studentID", int.Parse(studentID));
+                        cmd.Parameters.AddWithValue("@accountID", int.Parse(accountID));
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
@@ -74,7 +74,7 @@ namespace Toodle
                         cmd.CommandType = CommandType.StoredProcedure;
 
 
-                        cmd.Parameters.AddWithValue("@studentID", int.Parse(studentID));
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
                         con.Open();
 
                         SqlDataReader rd = cmd.ExecuteReader();
