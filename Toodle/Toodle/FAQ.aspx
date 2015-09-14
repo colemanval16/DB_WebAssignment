@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="Toodle.FAQ" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
-    <title>Toodle - FAQ page</title>
     <meta name="description" content="Frequently Asked Questions for the Toodle Website." />
+    <title>Toodle - FAQ page</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>

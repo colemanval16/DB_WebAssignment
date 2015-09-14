@@ -13,5 +13,11 @@ namespace Toodle
         {
 
         }
+
+        protected void btnStartDBFund_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DatabaseFundamentals.aspx");
+            
+        }
     }
 }

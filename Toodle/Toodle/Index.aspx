@@ -1,5 +1,6 @@
 ﻿  <%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Toodle.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
+    <meta name="description" content="List of six categories of courses offered by Toodle" />
     <title>Toodle - Main Page</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">

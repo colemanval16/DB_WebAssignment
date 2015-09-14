@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="Toodle.Contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
     <meta name="description" content="Contact Details for Toodle"/>
-    <title>Contact</title>
+    <title>Toodle - Contact Page</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-<script src="script.js" type="text/javascript" ></script>
+    <script src="script.js" type="text/javascript" ></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Slider" runat="server">
       <!-- PLACEHOLDER FOR THE SLIDESHOW -->
@@ -41,7 +41,7 @@
                 </div>
               </div>
 
-    
+            <hr />
             <div class="row">
                 <div class="col-md-4 col-sm-6 posCenter">
                    

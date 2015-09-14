@@ -1,10 +1,10 @@
 
-	$(document).ready(function(){
-	    $(".fancybox").fancybox({
-	        parent: "form:first"
-	    });
-	})
-	
+$(function () {
+    $("#Link1").click(function (evt) {
+        evt.preventDefault();
+        $('#Panel1').slideToggle('slow');
+    });
+});
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
@@ -23,12 +23,14 @@ function initialize() {
   });
 }
 
-$(document).ready(function () {
+
+
+/*$(document).ready(function () {
     $("p").hide();
     $("h3").click(function ()
     {
         $(this).next("p").slideToggle(500);
     });
 
-});
+});*/
 
