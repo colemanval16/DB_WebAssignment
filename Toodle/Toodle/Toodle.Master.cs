@@ -14,14 +14,19 @@ namespace Toodle
 {
     public partial class Toodle : System.Web.UI.MasterPage
     {
+        string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             string firstname = (string)Session["firstName"];
             string lastname = (string)Session["lastName"];
             string accountType = (string)Session["accountType"];
+            string accountID = (string)Session["accountID"];
+            
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('You have not enrolled this course')", true);
             //when the page is loaded for the firsttime
             if (!IsPostBack)
             {
+               
                 if (firstname != null)
                 {
                     lblName.Text = firstname + " " + lastname;
@@ -37,26 +42,64 @@ namespace Toodle
                         accountLink.Visible = false;
                         adminAccountLink.Visible = true;
                     }
+
+
+                   
                 }
                 else
                 {
                     accountLink.Visible = false;
                     adminAccountLink.Visible = false;
+                    mtaDBmenu.Visible = false;
                 }
             }
             else
             {
-                //accountLink.Visible = true;
                 adminAccountLink.Visible = true;
-
+                mtaDBmenu.Visible = false;
             }
 
         }
+
+        private List<String> IsCourseEnrolled(string accountID)
+        {
+            List<String> enrolledCourse = new List<String>();
+            try
+            {               
+                using (SqlConnection con = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spCheckIfStudentEnrolledCourse", con))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
+                        con.Open();
+
+                        SqlDataReader rd = cmd.ExecuteReader();
+
+
+                        if (rd.Read())
+                        {
+                            
+                            enrolledCourse.Add(rd.GetValue(0).ToString());
+                           
+                        }
+                     }
+                }               
+            }                   
+            catch (SqlException)
+            {
+
+            }
+            return enrolledCourse;
+        }
+        
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
+                
                 using (SqlConnection con = new SqlConnection(ToodleConnection))
                 {
                     using (SqlCommand cmd = new SqlCommand("spLogIn", con))
@@ -82,6 +125,7 @@ namespace Toodle
                                 useraccount.Visible = true;
                                 adminAccountLink.Visible = false;
                                 accountLink.Visible = true;
+                                
                             }
 
                             if (accountType == "AA")
@@ -94,14 +138,25 @@ namespace Toodle
                             loginBox.Visible = false;
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
 
+
                             lblName.Text = rd.GetValue(1).ToString() + " " + rd.GetValue(2).ToString();
                             Session.Add("firstName", rd.GetValue(1).ToString());
                             Session.Add("lastName", rd.GetValue(2).ToString());
                             Session.Add("accountID", rd.GetValue(0).ToString());
                             Session.Add("accountType", rd.GetValue(3).ToString());
+
+                            List<String> enrolledCourse = IsCourseEnrolled(rd.GetValue(0).ToString());
+                            foreach (string course in enrolledCourse)
+                            {
+                                if (course == "MTA01")
+                                {
+                                    mtaDBmenu.Visible = true;
+                                }
+                            }
                         }
                         else
                         {
+                            mtaDBmenu.Visible = false;
                             useraccount.Visible = false;
                             loginBox.Visible = true;
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Login Failed')", true);

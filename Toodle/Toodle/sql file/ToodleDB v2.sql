@@ -145,6 +145,17 @@ FROM StudentCourse
 WHERE AccountID = @accountID
 END
 GO
+
+-- To check if student enrolled the course (if yes let them click the course menu)
+CREATE PROCEDURE spCheckIfStudentEnrolledCourse
+@accountID VARCHAR(30)
+AS
+BEGIN
+SELECT CourseID
+FROM StudentCourse
+WHERE AccountID = @accountID
+END
+GO
 --------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog
 CREATE TABLE CourseStatusLog

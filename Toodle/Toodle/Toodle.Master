@@ -62,7 +62,7 @@
                                 <li class="dropdown">
                                     <a href="#">Database Track</a>
                                     <ul  class="dropdown-menu submenu" style="left: 171px; top: -7px;">
-                                        <li><a href="DatabaseFundamentals.aspx">Database Fundamentals</a></li>
+                                        <li><a href="DatabaseFundamentals.aspx" id="mtaDBmenu" runat="server">Database Fundamentals</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
