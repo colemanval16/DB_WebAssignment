@@ -13,7 +13,7 @@
         <div id="news">
    	<div class="row">
 	<div class="col-md-10 col-md-offset-1">
-       <h2>Top Technology News from BBC</h2>
+       <h1>Top Technology News from BBC</h1>
          <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="http://feeds.bbci.co.uk/news/technology/rss.xml" XPath="rss/channel/item[position()<=10]"></asp:XmlDataSource>
         <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataSourceID="XmlDataSource1" ForeColor="#333333">
             

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Toodle.Master" AutoEventWireup="true" CodeBehind="UnderConstruction.aspx.cs" Inherits="Toodle.UnderConstruction" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMeta" runat="server">
-    <title>Toodle - Page Coming soon</title>
     <meta name="description" content="Toodle page under construction, coming soon" />
+    <title>Toodle - Page Coming soon</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
 </asp:Content>

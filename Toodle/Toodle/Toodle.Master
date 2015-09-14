@@ -127,14 +127,15 @@
               </asp:ContentPlaceHolder>
         
             <footer>
-                <p><a href="#">Back to top</a></p>
+                
                 <nav>
 				    <ul>
-					    <li><a href="#"><img src="images/twitter20.png" alt="Twitter" ></a></li>
-					    <li><a href="#"><img src="images/linkedIn11.png" alt="LinkedIn" ></a></li>
-					    <li><a href="#"><img src="images/facebook31.png" alt="Facebook" ></a></li>
-                        <li><a href="#"><img src="images/youtube18.png" alt="Youtube" ></a></li>
+					    <li><a href="https://twitter.com/DBScollege"><img src="images/twitter20.png" alt="Twitter" ></a></li>
+					    <li><a href="http://www.linkedin.com/company/dublin-business-school"><img src="images/linkedIn11.png" alt="LinkedIn" ></a></li>
+					    <li><a href="https://www.facebook.com/DublinBusinessSchool"><img src="images/facebook31.png" alt="Facebook" ></a></li>
+                        <li><a href="https://www.youtube.com/"><img src="images/youtube18.png" alt="Youtube" ></a></li>
 				    </ul>
+                    <p>Toodle DBS &copy; 2015 All Rights Reserved</p>
 			    </nav>
                 <p></p>
              </footer> 
