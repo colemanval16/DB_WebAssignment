@@ -1,84 +1,53 @@
 --CREATE DATABASE
 CREATE DATABASE ToodleDB
 GO
---Hello World
 
 USE ToodleDB
 GO
 --------------------------------------------------------------------------------------------Account
+--CREATE TABLE StudentAccount
 CREATE TABLE Account
 (
-AccountID CHAR(2) PRIMARY KEY,
-AccountType VARCHAR(100)
-)
-GO
-
---INSERT DATA INTO Account
-INSERT INTO Account (AccountID,AccountType)
-VALUES
-('SA','Student Account'),
-('AA','Administrator Account')
-GO
---------------------------------------------------------------------------------------------AdministratorAccount
---CREATE TABLE AdminAccount
-CREATE TABLE AdminAccount
-(
-AdminID VARCHAR(30) PRIMARY KEY,
-AdminFirstname VARCHAR(100) NOT NULL,
-AdminLastname VARCHAR(100) NOT NULL,
-AdminEmail VARCHAR(100) NOT NULL,
-AccountID CHAR(2) NOT NULL FOREIGN KEY REFERENCES Account (AccountID)
-)
-GO
-
---INSERT DATA INTO AdminAccount
-INSERT INTO AdminAccount (AdminID, AdminFirstname, AdminLastname, AdminEmail,AccountID)
-VALUES
-('Admin001', 'John', 'Smith', 'John001@gmail.com','AA'),
-('Admin002', 'Keanu', 'Reeves', 'Keanu7423@gmail.com','AA'),
-('Admin003','Brad','Pitt','Pitt@hotmail.com','AA')
-GO
-
---------------------------------------------------------------------------------------------StudentAccount
---CREATE TABLE StudentAccount
-CREATE TABLE StudentAccount
-(
-StudentID INT PRIMARY KEY,
-StudentPassword VARCHAR(100) NOT NULL,
-StudentFirstname VARCHAR(100) NOT NULL,
-StudentLastname VARCHAR(100) NOT NULL,
-StudentEmail VARCHAR(100) NOT NULL,
-AccountID CHAR(2) NOT NULL FOREIGN KEY REFERENCES Account (AccountID)
+AccountID VARCHAR(30) PRIMARY KEY,
+AccountPassword VARCHAR(100) NOT NULL,
+AccountFirstname VARCHAR(100) NOT NULL,
+AccountLastname VARCHAR(100) NOT NULL,
+AccountEmail VARCHAR(100) NOT NULL,
+AccountType CHAR(2) NOT NULL,
+CONSTRAINT chk_AccountType CHECK (AccountType IN ('SA','AA'))
 )
 GO
 
 --INSERT DATA INTO StudentAccount
-INSERT INTO StudentAccount (StudentID,StudentPassword, StudentFirstname, StudentLastname, StudentEmail,AccountID)
+INSERT INTO Account (AccountID,AccountPassword, AccountFirstname, AccountLastname, AccountEmail,AccountType)
 VALUES
-(10275625,'p111', 'John', 'Snow', 'Johnsnow@gmail.com','SA'),
-(10275626, 'p222','James', 'Brown', 'Jamesbown@gmail.com','SA'),
-(10270527,'p333','Tony','Kim','TonyKim@hotmail.com','SA'),
-(10275629, 'p444','Sharon', 'Miller','Johnsnow@gmail.com','SA')
+('10275625','p111', 'John', 'Snow', 'Johnsnow@gmail.com','SA'),
+('10275626', 'p222','James', 'Brown', 'Jamesbown@gmail.com','SA'),
+('10270527','p333','Tony','Kim','TonyKim@hotmail.com','SA'),
+('10275629', 'p444','Sharon', 'Miller','Johnsnow@gmail.com','SA'),
+('Admin001','p001', 'John', 'Smith', 'John001@gmail.com','AA'),
+('Admin002','p002', 'Keanu', 'Reeves', 'Keanu7423@gmail.com','AA'),
+('Admin003','p003','Brad','Pitt','Pitt@hotmail.com','AA')
 GO
 
 CREATE PROCEDURE spLogIn
-@studentID INT,
+@accountID VARCHAR(30),
 @password VARCHAR(100)
 AS
 BEGIN
-	SELECT StudentFirstname, StudentLastname, StudentID
-	FROM StudentAccount
-	WHERE StudentID=@studentID  AND StudentPassword=@password 
+	SELECT AccountID, AccountFirstname, AccountLastname,AccountType
+	FROM Account
+	WHERE AccountID=@accountID  AND AccountPassword=@password 
 END
 GO
 
 CREATE PROCEDURE spGetStudentAccountInfo
-@studentID INT
+@accountID VARCHAR(30)
 AS
 BEGIN
-	SELECT StudentID, StudentFirstname, StudentLastname, StudentEmail 
-	FROM StudentAccount
-	WHERE StudentID=@studentID
+	SELECT AccountID, AccountFirstname, AccountLastname, AccountType 
+	FROM Account
+	WHERE AccountID=@accountID
 END
 GO
 --------------------------------------------------------------------------------------------CourseCategory
@@ -144,7 +113,7 @@ CREATE TABLE StudentCourse
 StudentCourseID INT IDENTITY(1,1) PRIMARY KEY,
 CourseStartDate  DATETIME NOT NULL,
 CourseEndDate  DATETIME NOT NULL,
-StudentID INT NOT NULL FOREIGN KEY REFERENCES StudentAccount (StudentID),
+AccountID VARCHAR(30) NOT NULL FOREIGN KEY REFERENCES Account (AccountID),
 CourseID VARCHAR(10) NOT NULL FOREIGN KEY REFERENCES Course (CourseID),
 CourseStatusID VARCHAR(25) NOT NULL FOREIGN KEY REFERENCES CourseStatus (CourseStatusID) DEFAULT 'Added'
 )
@@ -155,25 +124,25 @@ GO
 --trigger is fired for adding a record in CourseStatusLog
 
 CREATE  PROCEDURE spStudentRegisterCourse
-@studentID INT,
+@accountID VARCHAR(30),
 @courseID VARCHAR(10)
 AS
 BEGIN
 INSERT INTO StudentCourse
-(CourseStartDate,CourseEndDate,StudentID,CourseID)
+(CourseStartDate,CourseEndDate,AccountID,CourseID)
 VALUES 
-(GETDATE(),GETDATE()+(SELECT CourseOptiumDuration FROM Course WHERE CourseID = @courseID),@studentID ,@courseID )
+(GETDATE(),GETDATE()+(SELECT CourseOptiumDuration FROM Course WHERE CourseID = @courseID),@accountID ,@courseID )
 END
 GO
 
 --Get infomation of studnet's enrolled course
 CREATE PROCEDURE spGetStudentCourseInformation
-@studentID INT
+@accountID VARCHAR(30)
 AS
 BEGIN
 SELECT CourseID,CourseStartDate,CourseEndDate,CourseStatusID
 FROM StudentCourse
-WHERE StudentID = @studentID
+WHERE AccountID = @accountID
 END
 GO
 --------------------------------------------------------------------------------------------CourseStatusLog

@@ -105,21 +105,25 @@
     <Content Include="DatabaseFundamentals.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Images\contract11.png" />
+    <Content Include="Images\courseListIcon.png" />
     <Content Include="Images\email5.png" />
-    <Content Include="Images\lock.png" />
     <Content Include="Images\mtaLogo.png" />
     <Content Include="Images\programmingLogo.png" />
     <Content Include="Images\q13no1.PNG" />
     <Content Include="Images\q13no2.PNG" />
+    <Content Include="Images\studentInfoIcon.png" />
     <Content Include="Images\telephone5.png" />
     <Content Include="Index.aspx" />
     <Content Include="ITnews.aspx" />
     <Content Include="MTAMain.aspx" />
     <Content Include="SoftwareDevelopmentFundamentals.aspx" />
     <Content Include="sql file\Poodle DB.sql" />
+    <Content Include="sql file\ToodleDB v2.sql" />
     <Content Include="sql file\toodleDbDiagram.PNG" />
     <Content Include="UnderConstruction.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebDevelopmentFundamentals.aspx" />
   </ItemGroup>
   <ItemGroup>

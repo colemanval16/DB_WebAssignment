@@ -67,6 +67,15 @@ namespace Toodle {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor accountLink;
         
         /// <summary>
+        /// adminAccountLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminAccountLink;
+        
+        /// <summary>
         /// loginBox control.
         /// </summary>
         /// <remarks>
@@ -76,22 +85,22 @@ namespace Toodle {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginBox;
         
         /// <summary>
-        /// lblStudentID control.
+        /// lblaccountID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStudentID;
+        protected global::System.Web.UI.WebControls.Label lblaccountID;
         
         /// <summary>
-        /// txtStudentID control.
+        /// txtaccountID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStudentID;
+        protected global::System.Web.UI.WebControls.TextBox txtaccountID;
         
         /// <summary>
         /// lblPassword control.
