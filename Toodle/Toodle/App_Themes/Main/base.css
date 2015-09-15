@@ -6,7 +6,7 @@
 /* --------------- GENERAL PROPERTIES --------------- */
 body {
   padding-bottom: 40px;
-  color: #5A5A5A;
+  color: #5A5A5A !important;
 }
 a:hover, a:active, a:focus {
    outline:             0 !important;
@@ -69,6 +69,17 @@ ul.dropdown-menu>li:hover>ul {
      padding:           5px 13px;
      background:        white;
      color:             darkgray;
+}
+.navbar-collapse.in {
+    overflow: visible !important;
+}
+#signInButton {
+    color: #FFF;
+    padding: 10px 20px;
+    background: #606060;
+    float: right;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
 /* --------------- CONTENT-TABBED PANEL --------------- */
@@ -212,6 +223,49 @@ footer li{
     left:               7px;
     float:              left;
 }
+/* --------------- MTA MAIN --------------- */
+
+#mtaMainContent {
+    border-left:         1px solid #5CA85B;
+    border-right:        1px solid #5CA85B;
+}
+#mtaMainContent h2 {
+    background:         #5CA85B;
+    color:              white;
+    padding:            10px;
+    margin-bottom:      0px !important;
+}
+#mtaMainContent .title {
+    background: #B3F3B2;
+    float: left;
+    width: 100%;
+}
+#mtaMainContent .title h3{
+    float:              left;        
+    margin-left:        2%;
+    margin-top:         14px !important;
+}
+.courseDescription {
+    clear:              both;
+}
+#mtaMainContent input {
+    margin-bottom:      10px;
+    margin-top:         10px;
+    margin-right:       5px;
+    float:              right;
+    background:         #5CA85B;
+    padding:            5px;
+    border-radius:      4px;
+    color:              white;
+}
+#mtaMainContent p:last-child{
+    margin:             0px !important;
+    padding-bottom:     10px;
+}
+#mtaMainContent p{
+    padding-top:        10px;
+    padding-left:       1%;
+}
 
 /* Small devices, 768px and up */
 @media (min-width: 768px) {
@@ -226,6 +280,12 @@ footer li{
     padding-right:      0px;
     padding-left:       0px;
     border-radius:      4px;    /* rounding corners of the navbar */
+}
+#signInButton {
+    background: none;
+    float: none;
+    margin-bottom: 0px;
+    border-radius: 0px;
 }
 footer {
     border-radius:      0px 0px 4px 4px;
