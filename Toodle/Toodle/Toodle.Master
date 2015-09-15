@@ -103,7 +103,7 @@
                     </div>
 
                         <div class="dropdown" id="loginBox" runat="server" style="float: right; padding-top: 15px;">
-                            <a style="color: white; padding: 15px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                            <a id="signInButton" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
                             <div class="dropdown-menu" id="login">
                                 <asp:Label ID="lblaccountID" runat="server" Text="ID"></asp:Label>
                                 <asp:TextBox ID="txtaccountID" runat="server"></asp:TextBox>
