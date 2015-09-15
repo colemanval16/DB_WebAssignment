@@ -23,10 +23,14 @@ namespace Toodle
                 getStudentInfo();
                 getStudentCourseInfo();
             }
-           
+            (this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
             
         }
+        void child_SignOutBtnClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
 
+        }
         private void getStudentInfo()
         {
             try

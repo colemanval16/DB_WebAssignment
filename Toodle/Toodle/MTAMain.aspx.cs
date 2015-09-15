@@ -48,6 +48,8 @@ namespace Toodle
 
         protected void btnStartDBFund_Click(object sender, EventArgs e)
         {
+             try
+             {
                 using (SqlConnection conn = new SqlConnection(ToodleConnection))
                 {
                     using (SqlCommand cmd = new SqlCommand("spCheckIfStudentEnrolledCourse", conn))
@@ -69,7 +71,12 @@ namespace Toodle
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Course not added.", "alert('Course can not be started. First you have to add course to your courses')", true);
                         }
                     }
-                }            
+                }
+             }
+             catch (SqlException)
+             {
+                 throw;
+             }
         }
 
         protected void btnAddDBFund_Click(object sender, EventArgs e)

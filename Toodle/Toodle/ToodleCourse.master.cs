@@ -12,6 +12,20 @@ namespace Toodle
         protected void Page_Load(object sender, EventArgs e)
         {
             tabbedMenu.FindItem("0").Selected = true;
+
+            string accountID = (string)Session["accountID"];
+            if (accountID != null)
+            {
+                string courseStatus = (string)Session["courseStatus"];
+                if (courseStatus != "")
+                {
+                    if (courseStatus == "Progress")
+                    {
+                        tabbedMenu.FindItem("1").Enabled = false;
+                        tabbedMenu.FindItem("2").Enabled = false;
+                    }
+                }
+            }
         }
 
         protected void tabbedMenu_MenuItemClick(object sender, MenuEventArgs e)

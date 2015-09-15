@@ -15,51 +15,70 @@ namespace Toodle
 {
      public partial class DatabaseFundamentals : System.Web.UI.Page
     {
-         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBVal"].ConnectionString;
-   
+        string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBart"].ConnectionString;
+        static string courseStatus = "";
+        string courseID = "MTA01";
+        static string accountID = "";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             nestedTabbedMenu.FindItem("0").Selected = true;
 
+            accountID = (string)Session["accountID"];
+            if (accountID != null)
+            {              
+                   courseStatus = CheckCourseStatus(accountID, courseID);
+                   
+                if (courseStatus != "")
+                {
+                    if(courseStatus == "Added")
+                    {
+                        if(ChangeCourseStatus(accountID, "Progress", courseID))
+                        {
+                            courseStatus = "Progress";
+                            btnCourseContentComplete.Visible = true;
+                        }                                         
+                    }
+                    else if (courseStatus == "Revision")
+                    {
+                        btnCourseContentComplete.Visible = false;
+                        btnTutorialsComplete.Visible = true;
+                    }
+                    else if (courseStatus == "MockExam")
+                    {
+                        btnCourseContentComplete.Visible = false;
+                        btnTutorialsComplete.Visible = false;
+                        btnMockExam1.Visible = true;
+                    }
+                    Session.Add("courseStatus", courseStatus);
+                }              
+            }
         }
         protected void nestedTabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             mvTabs2.ActiveViewIndex = int.Parse(nestedTabbedMenu.SelectedItem.Value);
 
-            //OR:
-            //int index = Int32.Parse(e.Item.Value);
-            //mvTabs2.ActiveViewIndex = index;
         }
 
         protected void btnTutorialsComplete_Click(object sender, EventArgs e)
         {
-            try
+            if (ChangeCourseStatus(accountID, "MockExam", courseID))
             {
-
-            }
-            catch (Exception)
-            {
-                
-              
+                btnTutorialsComplete.Visible = false;
+                btnMockExam1.Visible = true;
+                //btnMockExam1.Enabled = false;
             }
         }
 
         protected void btnCourseContentComplete_Click(object sender, EventArgs e)
         {
-            try
+            if (ChangeCourseStatus(accountID, "Revision", courseID))
             {
+                btnTutorialsComplete.Visible = true;
+                //btnTutorialsComplete.Enabled = false;
             }
-
-            catch (SqlException)
-            {
-                }
-
-            }
+        }
         
-
-
-
-
         protected void btnMockExam1_Click(object sender, EventArgs e)
         {
             try
@@ -184,6 +203,62 @@ namespace Toodle
             }
 
             return result;
+        }
+
+        protected string CheckCourseStatus(string accountID, string courseID)
+        {
+            string courseStatus = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spCheckCourseStatus", conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
+                        cmd.Parameters.AddWithValue("@courseID", courseID);
+                        conn.Open();
+                        courseStatus = (String)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            return courseStatus;
+        }
+        protected bool ChangeCourseStatus(string accountID, string courseStatusID, string courseID)
+        {
+            bool value = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spUpdateStudentCourseStatus", conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
+                        cmd.Parameters.AddWithValue("@courseStatusID", courseStatusID);
+                        cmd.Parameters.AddWithValue("@courseID", courseID);
+                        conn.Open();
+                        int num = (Int32)cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            value = true;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);//throw;
+            }
+            return value;
         }
 
     }

@@ -187,7 +187,7 @@ namespace Toodle
 
             string currentUrl = HttpContext.Current.Request.Url.LocalPath;
 
-            if (currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
+            if (currentUrl.EndsWith("AdministratorPage.aspx") || currentUrl.EndsWith("Account.aspx") || currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
             {
                 SignOutBtnClicked(sender, e);
             }

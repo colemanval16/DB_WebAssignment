@@ -106,6 +106,11 @@ VALUES
 ('MockExam','User completed the tutorials'),
 ('Completed','User completed the MockExam')
 GO
+
+INSERT INTO CourseStatus(CourseStatusID,CourseStatusDescription)
+VALUES
+('Revision','User finished content')
+GO
 --------------------------------------------------------------------------------------------StudentCourse
 --CREATE TABLE StudentCourse
 CREATE TABLE StudentCourse
@@ -167,6 +172,26 @@ BEGIN
 UPDATE StudentCourse 
 SET CourseStatusID = @courseStatusID WHERE AccountID = @accountID AND CourseID = @courseID
 END
+GO
+
+
+------------------------------------------------------------------
+--creating stored procedure to check status of the course
+CREATE PROC spCheckCourseStatus
+@accountID VARCHAR(30),
+@courseID VARCHAR(10)
+
+AS
+BEGIN
+	SET NOCOUNT ON
+	SELECT sc.CourseStatusID
+	FROM dbo.StudentCourse sc
+	WHERE AccountID = @accountID AND CourseID = @courseID
+END
+GO
+
+--checking if spCheckCourseStatus works
+EXEC spCheckCourseStatus '10270527', 'MTA01'
 GO
 --------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog

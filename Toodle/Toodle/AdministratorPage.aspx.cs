@@ -17,9 +17,13 @@ namespace Toodle
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //((HtmlGenericControl)this.Page.Master.FindControl("accountLink")).Visible = false;
+            (this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
         }
+        void child_SignOutBtnClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
 
+        }
         protected void btnShow_Click(object sender, EventArgs e)
         {
             string courseID = ddlCourse.SelectedValue;
@@ -84,27 +88,28 @@ namespace Toodle
  
                             if (rd.Read())
                             {
+                                while(rd.Read())
+                                {
+                                    Label date = new Label();
+                                    date.Text = rd[0].ToString();
 
-                                Label date = new Label();
-                                date.Text = rd[0].ToString();
+                                    Label noOfStudent = new Label();
+                                    noOfStudent.Text = rd[1].ToString();
 
-                                Label noOfStudent = new Label();
-                                noOfStudent.Text = rd[1].ToString();
+                                    HtmlTableRow row = new HtmlTableRow();
 
-                                HtmlTableRow row = new HtmlTableRow();
+                                    HtmlTableCell cell1 = new HtmlTableCell();
+                                    HtmlTableCell cell2 = new HtmlTableCell();
 
-                                HtmlTableCell cell1 = new HtmlTableCell();
-                                HtmlTableCell cell2 = new HtmlTableCell();
+                                    cell1.Controls.Add(date);
+                                    cell2.Controls.Add(noOfStudent);
 
-                                cell1.Controls.Add(date);
-                                cell2.Controls.Add(noOfStudent);
+                                    row.Cells.Add(cell1);
+                                    row.Cells.Add(cell2);
 
-                                //adding cells to row
-                                row.Cells.Add(cell1);
-                                row.Cells.Add(cell2);
-
-                                //adding row to empTable
-                                courseStatusTable.Rows.Add(row);
+                                    courseStatusTable.Rows.Add(row);
+                                }
+                                
                             }
                     }
                 }
