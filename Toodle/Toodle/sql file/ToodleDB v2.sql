@@ -50,6 +50,8 @@ BEGIN
 	WHERE AccountID=@accountID
 END
 GO
+
+
 --------------------------------------------------------------------------------------------CourseCategory
 --CREATE TABLE CourseCategory
 CREATE TABLE CourseCategory
@@ -168,6 +170,17 @@ UPDATE StudentCourse
 SET CourseStatusID = @courseStatusID WHERE AccountID = @accountID AND CourseID = @courseID
 END
 GO
+
+--Get the studentcourseid
+CREATE PROCEDURE spStudentCourseID
+@courseID VARCHAR(30),
+@accountID VARCHAR(10)
+AS
+BEGIN
+SELECT [StudentCourseID] FROM [StudentCourse] 
+WHERE CourseID = @courseID AND AccountID=@accountID
+END
+GO
 --------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog
 CREATE TABLE CourseStatusLog
@@ -264,4 +277,17 @@ BEGIN
 	VALUES(GETDATE(),@result,@studentCourseID)
 END
 
+GO
+
+
+--Get Exam history
+ CREATE PROCEDURE spGetMockExamHistory
+@studentCourseID INT
+AS
+BEGIN
+SELECT  
+[MockExamDate],[MockExamResult]
+FROM [MockExamResultLog]
+WHERE StudentCourseID = @studentCourseID
+END
 GO

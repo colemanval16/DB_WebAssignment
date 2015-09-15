@@ -17,13 +17,10 @@ namespace Toodle
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            (this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
+            //(this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
+           // (this.Master as ToodleCourse).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
         }
-        void child_SignOutBtnClicked(object sender, EventArgs e)
-        {
-            Response.Redirect("Index.aspx");
 
-        }
         protected void btnShow_Click(object sender, EventArgs e)
         {
             string courseID = ddlCourse.SelectedValue;
