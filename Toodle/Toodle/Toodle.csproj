@@ -62,7 +62,6 @@
     <Content Include="App_Themes\Main\base.css" />
     <Content Include="App_Themes\Main\bootstrap.css" />
     <Content Include="App_Themes\Main\bootstrap.js" />
-    <Content Include="App_Themes\Main\carousel.css" />
     <Content Include="App_Themes\Main\fancyBox\demo\1_b.jpg" />
     <Content Include="App_Themes\Main\fancyBox\demo\1_s.jpg" />
     <Content Include="App_Themes\Main\fancyBox\demo\2_b.jpg" />
@@ -99,6 +98,7 @@
     <Content Include="App_Themes\Main\ie-emulation-modes-warning.js" />
     <Content Include="App_Themes\Main\ie10-viewport-bug-workaround.js" />
     <Content Include="App_Themes\Main\jquery.js" />
+    <Content Include="App_Themes\Main\js\accordion.js" />
     <Content Include="App_Themes\Main\script.js" />
     <Content Include="App_Themes\Main\styles.css" />
     <Content Include="Contact.aspx" />

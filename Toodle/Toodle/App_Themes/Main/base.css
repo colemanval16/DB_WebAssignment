@@ -1,6 +1,4 @@
-﻿/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
+﻿/* fOR AN extra small devices (phones, less than 768px) - no media query - this is the default size in Bootstrap */
 
 
 /* --------------- GENERAL PROPERTIES --------------- */
@@ -23,8 +21,6 @@ a:hover, a:active, a:focus {
     font-size:          20px;
     font-weight:        bold;
 }
-
-
 
 
 /* --------------- MAIN NAVIGATION --------------- */
@@ -80,6 +76,27 @@ ul.dropdown-menu>li:hover>ul {
     float: right;
     margin-bottom: 10px;
     border-radius: 4px;
+}
+
+/* --------------- SLIDE SHOW (CAROUSEL) --------------- */
+
+.carousel {
+  height: 200px;
+  margin-bottom: 60px;
+}
+.carousel-caption {
+  z-index: 10;
+}
+.carousel .item {
+  height: 200px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 200px;
 }
 
 /* --------------- CONTENT-TABBED PANEL --------------- */
@@ -234,16 +251,23 @@ footer li{
     color:              white;
     padding:            10px;
     margin-bottom:      0px !important;
+    clear:              both;
 }
 #mtaMainContent .title {
     background: #B3F3B2;
     float: left;
     width: 100%;
+    border-bottom:      1px solid #5CA85B;
 }
 #mtaMainContent .title h3{
     float:              left;        
     margin-left:        2%;
     margin-top:         14px !important;
+}
+.arrows {
+    transform:          rotate(90deg);
+    position:           absolute;
+    margin-left:        12px;
 }
 .courseDescription {
     clear:              both;
@@ -258,13 +282,15 @@ footer li{
     border-radius:      4px;
     color:              white;
 }
-#mtaMainContent p:last-child{
-    margin:             0px !important;
-    padding-bottom:     10px;
-}
 #mtaMainContent p{
     padding-top:        10px;
     padding-left:       1%;
+    border-bottom:      1px solid #5CA85B;
+}
+#mtaMainContent p:last-child{
+    margin:             0px !important;
+    padding-bottom:     10px;
+    border-bottom:      none;
 }
 
 /* Small devices, 768px and up */
@@ -282,10 +308,10 @@ footer li{
     border-radius:      4px;    /* rounding corners of the navbar */
 }
 #signInButton {
-    background: none;
-    float: none;
-    margin-bottom: 0px;
-    border-radius: 0px;
+    background:         none;
+    float:              none;
+    margin-bottom:      0px;
+    border-radius:      0px;
 }
 footer {
     border-radius:      0px 0px 4px 4px;
