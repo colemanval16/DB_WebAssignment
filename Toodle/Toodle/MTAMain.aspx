@@ -82,7 +82,7 @@
             <div class="title">              
                 <h3>Database Fundamentals<span class="arrows">&raquo;</span></h3>
                 <asp:Button ID="btnAddDBFund" runat="server" Text="Add Course" OnClick="btnAddDBFund_Click" />
-                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" Visible="False" OnClick="btnStartDBFund_Click1" />
+                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" OnClick="btnStartDBFund_Click1" Enabled="False" />
            </div>
             <div class="courseDescription">  
                 <p>Topics covered on this course: Core Database Concepts, Creating Database Objects, Manipulating Data, Data Storage, and Administering a Database. </p>

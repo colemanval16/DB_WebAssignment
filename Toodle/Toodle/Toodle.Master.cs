@@ -14,7 +14,7 @@ namespace Toodle
 {
     public partial class Toodle : System.Web.UI.MasterPage
     {
-        public event EventHandler MyButtonClicked;
+        public event EventHandler SignOutBtnClicked;
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -183,7 +183,16 @@ namespace Toodle
             useraccount.Visible = false;
             accountLink.Visible = false;
             adminAccountLink.Visible = false;
-            MyButtonClicked(sender, e);
+            
+
+            string currentUrl = HttpContext.Current.Request.Url.LocalPath;
+
+            if (currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
+            {
+                SignOutBtnClicked(sender, e);
+            }
+
+            
         }
 
 

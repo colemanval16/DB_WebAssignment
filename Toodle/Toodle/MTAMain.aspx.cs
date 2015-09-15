@@ -14,9 +14,11 @@ namespace Toodle
     {
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
 
-        void child_MyButtonClicked(object sender, EventArgs e)
+        void child_SignOutBtnClicked(object sender, EventArgs e)
         {
-            btnAddDBFund.Text = "aaaa";
+            btnAddDBFund.Text = "Add Course";
+            btnStartDBFund.Enabled = false;
+           
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,16 +32,17 @@ namespace Toodle
                 {
                     if (course == "MTA01")
                     {
-                        btnAddDBFund.Attributes.Add("style", "background-color:red");
+                       // btnAddDBFund.Attributes.Add("style", "background-color:red");
                         btnAddDBFund.Text = "Added";
                         btnAddDBFund.Enabled = false;
                         btnStartDBFund.Visible = true;
+                        btnStartDBFund.Enabled = true;
 
                     }
                 }
             }
 
-            (this.Master as Toodle).MyButtonClicked += new EventHandler(child_MyButtonClicked);
+            (this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
 
         }
 
