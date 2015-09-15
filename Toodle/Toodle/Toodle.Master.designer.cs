@@ -46,7 +46,7 @@ namespace Toodle {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mtaDBmenu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mtaDBmenu;
         
         /// <summary>
         /// useraccount control.

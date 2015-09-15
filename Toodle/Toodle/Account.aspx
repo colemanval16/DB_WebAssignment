@@ -19,7 +19,7 @@
 
 <br/><br/><br/><br/><br /><br />
     <div class="row">
-	    <div class="col-md-3">       
+	    <div class="col-md-3 col-md-offset-1">       
            <br /> 
             <img src="Images/studentInfoIcon.png" class="img-responsive accountImage" alt="student Info Icon"/>  
         </div>
@@ -50,7 +50,7 @@
 <br />
 <br />
     <div="row">
-         <div class="col-md-6">
+         <div class="col-md-6 col-md-offset-1">
             
             <table class="table table-hover" id="courseInformationTable" runat="server">
                 <tr>
@@ -76,5 +76,9 @@
        
         </div>
     </div>
+
+    <br />
+<br />
+<br />
     </div>
 </asp:Content>

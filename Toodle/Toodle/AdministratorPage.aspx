@@ -13,7 +13,7 @@
 
 <br/><br/><br/><br/><br /><br />
     <div class="row">
-	    <div class="col-md-3">       
+	    <div class="col-md-3 col-md-offset-1">       
            <br /> 
             <img src="Images/courseStatusIcon.png" class="img-responsive accountImage" alt="student Info Icon"/>  
         </div>
@@ -37,7 +37,7 @@
     </div>
     <br /> <br /> <br /> <br /> <br /> 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-1">
              <br /> <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CourseID" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
@@ -76,5 +76,6 @@
             <img src="Images/settingIcon.png" class="img-responsive accountImage" alt="student Info Icon"/>  
         </div>
     </div>
+        <br/><br/><br/>
     </div>
 </asp:Content>

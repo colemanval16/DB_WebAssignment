@@ -502,6 +502,7 @@
 
     <!----- *****************************MOCK EXAM********************************---------->
  <h2>Database Fundamentals Mock Exam</h2>
+    <asp:Label ID="lblShowResult" runat="server" Text="" CssClass="displayResult"></asp:Label>
     <p>
             1) Which of the following is not a DDL statment
             <asp:RadioButtonList ID="rdMock1" runat="server">
@@ -778,7 +779,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="rdMock20" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
 
-            <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" />
+            <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" OnClick="btnMockExam1_Click" />
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="placeholderTabFour" runat="server">
 
