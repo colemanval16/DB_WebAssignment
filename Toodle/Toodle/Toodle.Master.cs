@@ -14,7 +14,7 @@ namespace Toodle
 {
     public partial class Toodle : System.Web.UI.MasterPage
     {
-        string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
+        string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBart"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             string firstname = (string)Session["firstName"];

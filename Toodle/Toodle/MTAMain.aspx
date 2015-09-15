@@ -20,7 +20,7 @@
             <h1>Microsoft Technology Associate (MTA) Courses</h1>
         </div>
     </div>
-    <div id="mtaMainContent">   
+    <section id="mtaMainContent">   
         <h2>IT Infrastructure Track</h2>
         <article>
             <div class="title">
@@ -144,7 +144,7 @@
                 <p>Topics covered on this course: Testing Fundamentals, Testing Methodologies, Creating Software Tests, Managing Software Test Projects, Working with Bugs, Automating Software Tests. </p>
             </div>  
         </article>
-        <div style="clear: both;"></div>
-        </div>
+        <div style="clear: both;"></div> <%-- helps properly connect content of the section with the footer --%>
+        </section>
         <script src="/App_Themes/Main/js/accordion.js"></script>
 </asp:Content>
