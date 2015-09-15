@@ -50,6 +50,8 @@ BEGIN
 	WHERE AccountID=@accountID
 END
 GO
+
+
 --------------------------------------------------------------------------------------------CourseCategory
 --CREATE TABLE CourseCategory
 CREATE TABLE CourseCategory
@@ -289,4 +291,17 @@ BEGIN
 	VALUES(GETDATE(),@result,@studentCourseID)
 END
 
+GO
+
+
+--Get Exam history
+ CREATE PROCEDURE spGetMockExamHistory
+@studentCourseID INT
+AS
+BEGIN
+SELECT  
+[MockExamDate],[MockExamResult]
+FROM [MockExamResultLog]
+WHERE StudentCourseID = @studentCourseID
+END
 GO

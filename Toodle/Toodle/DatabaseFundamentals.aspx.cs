@@ -10,21 +10,29 @@ using System.Web.Configuration;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace Toodle
 {
      public partial class DatabaseFundamentals : System.Web.UI.Page
     {
-        string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBart"].ConnectionString;
-        static string courseStatus = "";
-        string courseID = "MTA01";
-        static string accountID = "";
-        
+         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBart"].ConnectionString;
+    
+         string accountID;
+         string courseID = "MTA01";
+         string studentCourseID;
+         string courseStatus = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //(this.Master as Toodle).SignOutBtnClicked += new EventHandler(child_SignOutBtnClicked);
+            accountID = (string)Session["accountID"]; 
             nestedTabbedMenu.FindItem("0").Selected = true;
+            getStudentCourseId();
+            GetMockExamHistory();
 
-            accountID = (string)Session["accountID"];
+            
+         accountID = (string)Session["accountID"];
             if (accountID != null)
             {              
                    courseStatus = CheckCourseStatus(accountID, courseID);
@@ -49,11 +57,18 @@ namespace Toodle
                         btnCourseContentComplete.Visible = false;
                         btnTutorialsComplete.Visible = false;
                         btnMockExam1.Visible = true;
-                    }
+        }
                     Session.Add("courseStatus", courseStatus);
                 }              
             }
+    }
+
+        void child_SignOutBtnClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
+
+           
         protected void nestedTabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             mvTabs2.ActiveViewIndex = int.Parse(nestedTabbedMenu.SelectedItem.Value);
@@ -68,6 +83,7 @@ namespace Toodle
                 btnMockExam1.Visible = true;
                 //btnMockExam1.Enabled = false;
             }
+      
         }
 
         protected void btnCourseContentComplete_Click(object sender, EventArgs e)
@@ -77,8 +93,95 @@ namespace Toodle
                 btnTutorialsComplete.Visible = true;
                 //btnTutorialsComplete.Enabled = false;
             }
-        }
+
+
+    }
         
+        private void GetMockExamHistory()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spGetMockExamHistory", con))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+                        cmd.Parameters.AddWithValue("@studentCourseID", studentCourseID);
+                        con.Open();
+
+                        SqlDataReader rd = cmd.ExecuteReader();
+
+
+                        if (rd.Read())
+                        {
+                            while(rd.Read())
+                            {
+                                Label date = new Label();
+                                date.Text = rd[0].ToString();
+
+                                Label result = new Label();
+                                result.Text = rd[1].ToString();
+
+                                HtmlTableRow row = new HtmlTableRow();
+
+                                HtmlTableCell cell1 = new HtmlTableCell();
+                                HtmlTableCell cell2 = new HtmlTableCell();
+
+                                cell1.Controls.Add(date);
+                                cell2.Controls.Add(result);
+
+                                row.Cells.Add(cell1);
+                                row.Cells.Add(cell2);
+
+                                courseInformationTable.Rows.Add(row);
+                            }                       
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+
+                }
+        }
+        private void getStudentCourseId()
+        {
+              try
+            {
+                using (SqlConnection con = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spStudentCourseID", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@courseID", courseID);
+                        cmd.Parameters.AddWithValue("@accountID", accountID);
+                        con.Open();
+
+
+                         SqlDataReader rd = cmd.ExecuteReader();
+
+
+                        if (rd.Read())
+                        {
+                            studentCourseID = rd.GetValue(0).ToString();
+                        }
+
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+
+        }
+
+
         protected void btnMockExam1_Click(object sender, EventArgs e)
         {
             try
@@ -91,19 +194,20 @@ namespace Toodle
                         //getting result for Mock Exam
                         int result = MockResult();
 
-                        string courseID = (string)Session["courseID"];
+                        //string courseID = (string)Session["courseID"];
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
+                        //mockexamresultid
                         cmd.Parameters.AddWithValue("@result", result);
-                        cmd.Parameters.AddWithValue("@courseID", courseID);
+                        cmd.Parameters.AddWithValue("@studentCourseID", studentCourseID);
                         con.Open();
 
                         int i = cmd.ExecuteNonQuery();
 
                         if (i > 0)
                         {
-                           
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Please click in progress bar to check mock exam history')", true);
+                            clearMockExamSelection(result);
                         }
 
                     }
@@ -116,6 +220,33 @@ namespace Toodle
             }
         }
 
+
+        private void clearMockExamSelection(int result)
+        {
+            //clearing the answers
+            rdMock1.ClearSelection();
+            rdMock2.ClearSelection();
+            rdMock3.ClearSelection();
+            rdMock4.ClearSelection();
+            rdMock5.ClearSelection();
+            rdMock6.ClearSelection();
+            rdMock7.ClearSelection();
+            rdMock8.ClearSelection();
+            rdMock9.ClearSelection();
+            rdMock10.ClearSelection();
+            rdMock11.ClearSelection();
+            rdMock12.ClearSelection();
+            rdMock13.ClearSelection();
+            rdMock14.ClearSelection();
+            rdMock15.ClearSelection();
+            rdMock16.ClearSelection();
+            rdMock17.ClearSelection();
+            rdMock18.ClearSelection();
+            rdMock19.ClearSelection();
+            rdMock20.ClearSelection();
+
+            lblShowResults.Text = "Your score on this attempt was: " + result;
+        }
         public int MockResult()
         {
  

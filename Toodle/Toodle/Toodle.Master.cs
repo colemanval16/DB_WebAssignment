@@ -43,6 +43,7 @@ namespace Toodle
                     {
                         accountLink.Visible = false;
                         adminAccountLink.Visible = true;
+                        mtaDBmenu.Visible = true;
                     }
 
 
@@ -157,6 +158,10 @@ namespace Toodle
                                     mtaDBmenu.Visible = true;
 
                                 }
+                                else
+                                {
+                                    mtaDBmenu.Visible = false;
+                                }
                             }
                         }
                         else
@@ -183,11 +188,10 @@ namespace Toodle
             useraccount.Visible = false;
             accountLink.Visible = false;
             adminAccountLink.Visible = false;
-            
+            mtaDBmenu.Visible = false;
 
             string currentUrl = HttpContext.Current.Request.Url.LocalPath;
-
-            if (currentUrl.EndsWith("AdministratorPage.aspx") || currentUrl.EndsWith("Account.aspx") || currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
+            if (currentUrl.EndsWith("DatabaseFundamentals.aspx") || currentUrl.EndsWith("AdministratorPage.aspx") || currentUrl.EndsWith("Account.aspx") || currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
             {
                 SignOutBtnClicked(sender, e);
             }

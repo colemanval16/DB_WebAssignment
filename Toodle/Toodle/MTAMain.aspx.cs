@@ -102,6 +102,7 @@ namespace Toodle
                         if (i>0)
                         {
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Added Course", "alert('Course added')", true);
+                            Response.Redirect("DatabaseFundamentals.aspx");
                         }
                     }
                 }

@@ -21,13 +21,17 @@ namespace Toodle
                 {
                     if (courseStatus == "Progress")
                     {
-                        tabbedMenu.FindItem("1").Enabled = false;
-                        tabbedMenu.FindItem("2").Enabled = false;
+                        //tabbedMenu.FindItem("1").Enabled = false;
+                        //tabbedMenu.FindItem("2").Enabled = false;
                     }
                 }
             }
         }
+        void child_SignOutBtnClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
 
+        }
         protected void tabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             mvTabs.ActiveViewIndex = int.Parse(tabbedMenu.SelectedItem.Value);

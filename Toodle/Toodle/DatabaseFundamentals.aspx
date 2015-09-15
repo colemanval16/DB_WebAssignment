@@ -10,8 +10,19 @@
         <script src="App_Themes/Main/script.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="courseProgressBar" runat="server">
-    <p style="height: 200px;"></p>
-    <p>Placeholder for the progress bar...</p>
+
+        
+
+    <p style="height: 100px;"></p>
+      <div class="col-md-12 text-center">
+          <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+          aria-valuemin="0" aria-valuemax="100" style="width:65%">
+           Database Fundamentals
+          </div>
+        </div>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="placeholderTabOne" runat="server">
             <h2 style="text-align:center;">Content for Database Fundamentals</h2>
@@ -498,6 +509,7 @@
 
     <!----- *****************************MOCK EXAM********************************---------->
  <h2>Database Fundamentals Mock Exam</h2>
+    
     <p>
             1) Which of the following is not a DDL statment
             <asp:RadioButtonList ID="rdMock1" runat="server">
@@ -773,15 +785,17 @@
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="rdMock20" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
-
-            <asp:Button CommandName="NextView" ID="btnMockExam1" runat="server" Text="Submit Answers" OnClick="btnMockExam1_Click" />
+            <asp:Label ID="lblShowResults" runat="server" Text="" CssClass="displayResult"></asp:Label>
+            <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" OnClick="btnMockExam1_Click" />
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="placeholderTabFour" runat="server">
 
     <!----- *****************************PROGRESS********************************---------->
-    <h2>Tab four content</h2>
-    <p>Content, content and more content...</p>
-    <p>Content, content and more content...</p>
-    <p>Content, content and more content...</p>
-    <p>Content, content and more content...</p>
+        <h3>Mock exam history</h3>
+          <table class="table table-hover" id="courseInformationTable" runat="server">
+                <tr>
+                    <th>Date</th>
+                    <th>Result</th>
+                </tr>
+           </table>
 </asp:Content>

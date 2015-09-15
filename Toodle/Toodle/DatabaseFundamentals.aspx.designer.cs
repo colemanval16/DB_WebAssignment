@@ -94,15 +94,6 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.Button btnTutorialsComplete;
         
         /// <summary>
-        /// lblShowResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblShowResult;
-        
-        /// <summary>
         /// rdMock1 control.
         /// </summary>
         /// <remarks>
@@ -463,6 +454,15 @@ namespace Toodle {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator20;
         
         /// <summary>
+        /// lblShowResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblShowResults;
+        
+        /// <summary>
         /// btnMockExam1 control.
         /// </summary>
         /// <remarks>
@@ -470,5 +470,14 @@ namespace Toodle {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMockExam1;
+        
+        /// <summary>
+        /// courseInformationTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable courseInformationTable;
     }
 }
