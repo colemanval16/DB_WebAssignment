@@ -62,7 +62,7 @@
                                 <li class="dropdown">
                                     <a href="#">Database Track</a>
                                     <ul  class="dropdown-menu submenu" style="left: 171px; top: -7px;">
-                                        <li><a href="DatabaseFundamentals.aspx">Database Fundamentals</a></li>
+                                        <li><a href="DatabaseFundamentals.aspx" id="mtaDBmenu" runat="server">Database Fundamentals</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -95,8 +95,8 @@
                         <ul>
                              <li style="list-style-type: none;"><asp:Label ID="lblName" runat="server" Text=""  style="color: #ffffff"></asp:Label></li>                          
                             <li style="list-style-type: none;"><a href="Account.aspx" id="accountLink" runat="server" title="useraccount">Account</a></li>  
-                              <li style="list-style-type: none;"><a href="Account.aspx" id="adminAccountLink" runat="server" title="Admin account">Admin Account</a></li>                                                
-                        </ul>                        
+                              <li style="list-style-type: none;"><a href="AdministratorPage.aspx" id="adminAccountLink" runat="server" title="Admin account">Admin Account</a></li>                                                
+                        </ul>                     
                     </div>
 
                         <div class="dropdown" id="loginBox" runat="server" style="float: right; padding-top: 15px;">

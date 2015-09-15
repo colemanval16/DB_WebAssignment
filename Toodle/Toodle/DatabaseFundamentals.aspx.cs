@@ -18,6 +18,9 @@ namespace Toodle
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
             nestedTabbedMenu.FindItem("0").Selected = true;
 
             string conntoodleDB = WebConfigurationManager.ConnectionStrings["ToodleDBVal"].ConnectionString;
