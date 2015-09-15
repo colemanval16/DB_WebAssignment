@@ -93,9 +93,12 @@
 
                      <div id="useraccount" style="float: right" runat="server">
                         <ul>
-                             <li style="list-style-type: none;"><asp:Label ID="lblName" runat="server" Text=""  style="color: #ffffff"></asp:Label></li>                          
-                            <li style="list-style-type: none;"><a href="Account.aspx" id="accountLink" runat="server" title="useraccount">Account</a></li>  
-                              <li style="list-style-type: none;"><a href="AdministratorPage.aspx" id="adminAccountLink" runat="server" title="Admin account">Admin Account</a></li>                                                
+                             <li style="list-style-type: none;">
+                                 <asp:Label ID="lblName" runat="server" Text=""  style="color: #ffffff"></asp:Label></li>                          
+                            <li style="list-style-type: none;">
+                                <a href="Account.aspx" id="accountLink" runat="server" title="useraccount" ForeColor="White">Account</a> 
+                              <a href="AdministratorPage.aspx" id="adminAccountLink" runat="server" ForeColor="White" title="Admin account">Admin Account</a>
+                            <asp:LinkButton ID="signOut" runat="server" OnClick="signOut_Click" ForeColor="White">Sign Out</asp:LinkButton></li>                                            
                         </ul>                     
                     </div>
 

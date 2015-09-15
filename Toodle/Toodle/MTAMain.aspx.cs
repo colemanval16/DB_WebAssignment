@@ -13,8 +13,33 @@ namespace Toodle
     public partial class MTAMain : System.Web.UI.Page
     {
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
+
+        void child_MyButtonClicked(object sender, EventArgs e)
+        {
+            btnAddDBFund.Text = "aaaa";
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            string accountID = (string)Session["accountID"];
+            if (accountID != null)
+            {
+                Toodle toodle = new Toodle();
+
+                List<String> enrolledCourse = toodle.IsCourseEnrolled(accountID);
+                foreach (string course in enrolledCourse)
+                {
+                    if (course == "MTA01")
+                    {
+                        btnAddDBFund.Attributes.Add("style", "background-color:red");
+                        btnAddDBFund.Text = "Added";
+                        btnAddDBFund.Enabled = false;
+                        btnStartDBFund.Visible = true;
+
+                    }
+                }
+            }
+
+            (this.Master as Toodle).MyButtonClicked += new EventHandler(child_MyButtonClicked);
 
         }
 
@@ -56,6 +81,11 @@ namespace Toodle
             {
 
             }
+        }
+
+        protected void btnStartDBFund_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("DatabaseFundamentals.aspx");
         }
     }
 }

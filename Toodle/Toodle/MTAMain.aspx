@@ -128,7 +128,7 @@
             </div>
             <div class="col-md-4">
                 <asp:Button ID="btnAddDBFund" runat="server" Text="Add Course" OnClick="btnAddDBFund_Click" />
-                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" OnClick="btnStartDBFund_Click" />
+                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" Visible="False" OnClick="btnStartDBFund_Click1" />
            </div>
         </div>
         <div class="row">
