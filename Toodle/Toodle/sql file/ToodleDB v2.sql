@@ -156,6 +156,18 @@ FROM StudentCourse
 WHERE AccountID = @accountID
 END
 GO
+
+-- Update student course status
+CREATE  PROCEDURE spUpdateStudentCourseStatus
+@accountID VARCHAR(30),
+@courseStatusID VARCHAR(25),
+@courseID VARCHAR(10)
+AS
+BEGIN
+UPDATE StudentCourse 
+SET CourseStatusID = @courseStatusID WHERE AccountID = @accountID AND CourseID = @courseID
+END
+GO
 --------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog
 CREATE TABLE CourseStatusLog
@@ -186,6 +198,28 @@ BEGIN
 	PRINT  'StudentCourstLog is inserted'
 END
 GO
+
+
+
+--INSERT INTO DATA INTO CourseStatusLog when status is updated
+CREATE TRIGGER trgAfterStudentCourseUpdated
+ON [StudentCourse]
+AFTER UPDATE
+AS
+BEGIN
+	DECLARE @courseStatusID VARCHAR(25)
+	DECLARE @studentCourseID INT
+	DECLARE @log_time DATETIME
+	
+	SELECT @courseStatusID =  i.CourseStatusID   FROM inserted i
+	SELECT @studentCourseID =  i.StudentCourseID   FROM inserted i
+
+	INSERT INTO CourseStatusLog VALUES
+	(@courseStatusID,@studentCourseID,GETDATE())
+
+	PRINT  'StudentCourstLog is updated'
+END
+GO
 --------------------------------------------------------------------------------------------CourseAttendanceLog
 --CREATE TABLE CourseAttendanceLog
 CREATE TABLE CourseAttendanceLog
@@ -211,7 +245,7 @@ GO
 --------------------------------------------------------------------------------------------MockExamResultLog
 CREATE TABLE MockExamResultLog
 (
-MockExamResultLogID VARCHAR(25) PRIMARY KEY,
+MockExamResultLogID NT IDENTITY(100,1) PRIMARY KEY,
 MockExamDate DATETIME NOT NULL,
 MockExamResult INT NOT NULL,
 StudentCourseID INT FOREIGN KEY REFERENCES StudentCourse (StudentCourseID),
@@ -220,14 +254,14 @@ GO
 
 --Stored procedure for inserting MockExamResultLog
 --When a studnet click a button to SUBMIT after taking a mockexam
-CREATE PROCEDURE spInsertMockExamReulst
-@id VARCHAR(25),
+CREATE PROCEDURE spInsertMockExamResult
 @result INT,
 @studentCourseID INT
 AS
 BEGIN
 	INSERT INTO MockExamResultLog
-	(MockExamResultLogID,MockExamDate,MockExamResult,StudentCourseID)
-	VALUES(@id,GETDATE(),@result,@studentCourseID)
+	(MockExamDate,MockExamResult,StudentCourseID)
+	VALUES(GETDATE(),@result,@studentCourseID)
 END
+
 GO

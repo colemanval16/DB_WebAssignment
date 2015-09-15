@@ -13,18 +13,14 @@ using System.Data.SqlClient;
 
 namespace Toodle
 {
-    public partial class DatabaseFundamentals : System.Web.UI.Page
+     public partial class DatabaseFundamentals : System.Web.UI.Page
     {
-        SqlConnection conn;
+         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDBVal"].ConnectionString;
+   
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-
             nestedTabbedMenu.FindItem("0").Selected = true;
 
-            string conntoodleDB = WebConfigurationManager.ConnectionStrings["ToodleDBVal"].ConnectionString;
-            conn = new SqlConnection(conntoodleDB);
         }
         protected void nestedTabbedMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
@@ -33,12 +29,6 @@ namespace Toodle
             //OR:
             //int index = Int32.Parse(e.Item.Value);
             //mvTabs2.ActiveViewIndex = index;
-        }
-
-
-        protected void btnCourseContentComplete_Click1(object sender, EventArgs e)
-        {
-            //courseRevisionID.Visible = true;
         }
 
         protected void btnTutorialsComplete_Click(object sender, EventArgs e)
@@ -58,75 +48,60 @@ namespace Toodle
         {
             try
             {
+            }
 
-                using (SqlCommand cmd = new SqlCommand("spInsertMockExamReulst", conn))
-                    {
-                        int dataRows = 0;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        int result = MockResult();
-                        //how to create an individual id
-                        string mockId = "insert MockResult ID here";
-                        //where can I pull the courseId from?
-                        int courseID = 0;
-
-                        cmd.Parameters.AddWithValue("@id", mockId);
-                        cmd.Parameters.AddWithValue("@studentCourseID", courseID);
-                        cmd.Parameters.AddWithValue("@result", result);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
-                        conn.Open();
-
-                        using (conn)
-                        {
-                            conn.Open();
-                            dataRows = cmd.ExecuteNonQuery();
-                            if (dataRows > 0)
-                            {
-                                //clearing the answers
-                                rdMock1.ClearSelection();
-                                rdMock2.ClearSelection();
-                                rdMock3.ClearSelection();
-                                rdMock4.ClearSelection();
-                                rdMock5.ClearSelection();
-                                rdMock6.ClearSelection();
-                                rdMock7.ClearSelection();
-                                rdMock8.ClearSelection();
-                                rdMock9.ClearSelection();
-                                rdMock10.ClearSelection();
-                                rdMock11.ClearSelection();
-                                rdMock12.ClearSelection();
-                                rdMock13.ClearSelection();
-                                rdMock14.ClearSelection();
-                                rdMock15.ClearSelection();
-                                rdMock16.ClearSelection();
-                                rdMock17.ClearSelection();
-                                rdMock18.ClearSelection();
-                                rdMock19.ClearSelection();
-                                rdMock20.ClearSelection();
-
-                                //lblShowResult.Text = "Your score on this attempt was: " + result;
-                            }
-
-                        }
-                     }
-                
-
+            catch (SqlException)
+            {
                 }
-                catch (SqlException)
-                {
 
-                }
-            
             }
         
 
 
+
+
+        protected void btnMockExam1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(ToodleConnection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spInsertMockExamResult", con))
+                    {
+                        //getting result for Mock Exam
+                        int result = MockResult();
+
+                        string courseID = (string)Session["courseID"];
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now.Date);
+                        cmd.Parameters.AddWithValue("@result", result);
+                        cmd.Parameters.AddWithValue("@courseID", courseID);
+                        con.Open();
+
+                        int i = cmd.ExecuteNonQuery();
+
+                        if (i > 0)
+                        {
+                           
+                        }
+
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+        }
+
         public int MockResult()
         {
-            //adding correct answers to this variable
+ 
             int result = 0;
 
-            /*If correct answer is selected then count is incremented otherwise question and answer 
-             are added to the wrongAns sortedList*/
             if (rdMock1.SelectedItem.Value == "2")
             {
                 result++;

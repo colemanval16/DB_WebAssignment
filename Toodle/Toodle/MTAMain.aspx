@@ -5,7 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headLinks" runat="server">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/App_Themes/Main/script.js"></script> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Slider" runat="server">
           <!-- PLACEHOLDER FOR THE SLIDESHOW -->
@@ -82,7 +81,7 @@
             <div class="title">              
                 <h3>Database Fundamentals<span class="arrows">&raquo;</span></h3>
                 <asp:Button ID="btnAddDBFund" runat="server" Text="Add Course" OnClick="btnAddDBFund_Click" />
-                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" OnClick="btnStartDBFund_Click" />
+                <asp:Button ID="btnStartDBFund" runat="server" Text="Start Course" OnClick="btnStartDBFund_Click1" Enabled="False" />
            </div>
             <div class="courseDescription">  
                 <p>Topics covered on this course: Core Database Concepts, Creating Database Objects, Manipulating Data, Data Storage, and Administering a Database. </p>
