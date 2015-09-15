@@ -14,6 +14,7 @@ namespace Toodle
 {
     public partial class Toodle : System.Web.UI.MasterPage
     {
+        public event EventHandler SignOutBtnClicked;
         string ToodleConnection = WebConfigurationManager.ConnectionStrings["ToodleDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,17 +22,18 @@ namespace Toodle
             string lastname = (string)Session["lastName"];
             string accountType = (string)Session["accountType"];
             string accountID = (string)Session["accountID"];
-            
+
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('You have not enrolled this course')", true);
             //when the page is loaded for the firsttime
             if (!IsPostBack)
             {
-               
+
                 if (firstname != null)
                 {
                     lblName.Text = firstname + " " + lastname;
                     lblName.Visible = true;
                     loginBox.Visible = false;
+                    signOut.Visible = true;
                     if (accountType == "SA")
                     {
                         accountLink.Visible = true;
@@ -44,28 +46,29 @@ namespace Toodle
                     }
 
 
-                   
+
                 }
                 else
                 {
                     accountLink.Visible = false;
                     adminAccountLink.Visible = false;
                     mtaDBmenu.Visible = false;
+                    signOut.Visible = false;
                 }
             }
             else
             {
-                adminAccountLink.Visible = true;
-                mtaDBmenu.Visible = false;
+                //adminAccountLink.Visible = true;
+                //mtaDBmenu.Visible = false;
             }
 
         }
 
-        private List<String> IsCourseEnrolled(string accountID)
+        public List<String> IsCourseEnrolled(string accountID)
         {
             List<String> enrolledCourse = new List<String>();
             try
-            {               
+            {
                 using (SqlConnection con = new SqlConnection(ToodleConnection))
                 {
                     using (SqlCommand cmd = new SqlCommand("spCheckIfStudentEnrolledCourse", con))
@@ -81,25 +84,25 @@ namespace Toodle
 
                         if (rd.Read())
                         {
-                            
+
                             enrolledCourse.Add(rd.GetValue(0).ToString());
-                           
+
                         }
-                     }
-                }               
-            }                   
+                    }
+                }
+            }
             catch (SqlException)
             {
 
             }
             return enrolledCourse;
         }
-        
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                
+
                 using (SqlConnection con = new SqlConnection(ToodleConnection))
                 {
                     using (SqlCommand cmd = new SqlCommand("spLogIn", con))
@@ -125,7 +128,7 @@ namespace Toodle
                                 useraccount.Visible = true;
                                 adminAccountLink.Visible = false;
                                 accountLink.Visible = true;
-                                
+
                             }
 
                             if (accountType == "AA")
@@ -136,6 +139,7 @@ namespace Toodle
 
                             }
                             loginBox.Visible = false;
+                            signOut.Visible = true;
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "SignIn", "alert('Welcome to Toodle')", true);
 
 
@@ -151,6 +155,7 @@ namespace Toodle
                                 if (course == "MTA01")
                                 {
                                     mtaDBmenu.Visible = true;
+
                                 }
                             }
                         }
@@ -171,5 +176,26 @@ namespace Toodle
             }
         }
 
+        protected void signOut_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            loginBox.Visible = true;
+            useraccount.Visible = false;
+            accountLink.Visible = false;
+            adminAccountLink.Visible = false;
+            
+
+            string currentUrl = HttpContext.Current.Request.Url.LocalPath;
+
+            if (currentUrl.EndsWith("MTAMain.aspx") || currentUrl.EndsWith("/"))
+            {
+                SignOutBtnClicked(sender, e);
+            }
+
+            
+        }
+
+
     }
 }
+

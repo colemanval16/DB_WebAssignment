@@ -156,6 +156,18 @@ FROM StudentCourse
 WHERE AccountID = @accountID
 END
 GO
+
+-- Update student course status
+CREATE  PROCEDURE spUpdateStudentCourseStatus
+@accountID VARCHAR(30),
+@courseStatusID VARCHAR(25),
+@courseID VARCHAR(10)
+AS
+BEGIN
+UPDATE StudentCourse 
+SET CourseStatusID = @courseStatusID WHERE AccountID = @accountID AND CourseID = @courseID
+END
+GO
 --------------------------------------------------------------------------------------------CourseStatusLog
 --CREATE TALBE CourseStatusLog
 CREATE TABLE CourseStatusLog
@@ -184,6 +196,28 @@ BEGIN
 	(@courseStatusID,@studentCourseID,GETDATE())
 
 	PRINT  'StudentCourstLog is inserted'
+END
+GO
+
+
+
+--INSERT INTO DATA INTO CourseStatusLog when status is updated
+CREATE TRIGGER trgAfterStudentCourseUpdated
+ON [StudentCourse]
+AFTER UPDATE
+AS
+BEGIN
+	DECLARE @courseStatusID VARCHAR(25)
+	DECLARE @studentCourseID INT
+	DECLARE @log_time DATETIME
+	
+	SELECT @courseStatusID =  i.CourseStatusID   FROM inserted i
+	SELECT @studentCourseID =  i.StudentCourseID   FROM inserted i
+
+	INSERT INTO CourseStatusLog VALUES
+	(@courseStatusID,@studentCourseID,GETDATE())
+
+	PRINT  'StudentCourstLog is updated'
 END
 GO
 --------------------------------------------------------------------------------------------CourseAttendanceLog
