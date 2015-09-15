@@ -473,36 +473,31 @@
             </asp:View>
         </asp:MultiView>
     </div>
-   <asp:Button ID="btnCourseContentComplete" runat="server" Text="To access Tutorials" />
+   <asp:Button CommandName="NextView" ID="btnCourseContentComplete" runat="server" Text="To access Tutorials" />
     </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="placeholderTabTwo" runat="server">
      <h2 style="margin-bottom:30px">Video Tutorials for revision:</h2>
     <p><strong>Microsoft MTA Database Administration Fundamentals: Exam 98-364 - Sample Lesson</strong></p>
-    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/-mVDfFDWcqg">
-        <img src="images/MTAdbYouTube2.png" alt="MTA Video 1" height="175" width="325">
-        </a>
+    <iframe src="https://www.youtube.com/embed/-mVDfFDWcqg"></iframe>
+
     <p><strong>Introduction to Database Management Systems 1: Fundamental Concepts</strong></p>
-        <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/6u2zsJOJ_GE">
-        <img src="images/MTAdbYouTube1.png" alt="MTA Video 1" height="175" width="325">
-        </a>
+    <iframe src="https://www.youtube.com/embed/6u2zsJOJ_GE"></iframe>
+
     <p><strong> Tutorial for beginners 1/4; SQL Basic database/scripting Introduction lesson</strong></p>
-        <a class="fancybox fancybox.iframe" href="hhttps://www.youtube.com/embed/cYmQr8yeALA">
-        <img src="images/MTAdbYouTube3.png" alt="MTA Video 1" height="175" width="325">
-        </a>
+    <iframe src="https://www.youtube.com/embed/cYmQr8yeALA"></iframe>
 
     <p><strong>Usefull Websites:</strong></p>
     <ul>
          <li><a href="https://www.microsoft.com/learning/en-ie/mta-certification.aspx" target="_blank" title="Official MTA Webstie">Official MTA Certification Website</a></li>
         <li><a href="https://borntolearn.mslearn.net/certification/database/w/wiki/519.364-database-fundamentals" target="_blank" title="Borntolearn MSlearn.net">Born to learn by MS</a></li>
     </ul>
-    <asp:Button ID="btnTutorialsComplete" runat="server" Text="To access Mock Exam" />
+    <asp:Button CommandName="NextView" ID="btnTutorialsComplete" runat="server" Text="To access Mock Exam" />
 
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="placeholderTabThree" runat="server">
 
     <!----- *****************************MOCK EXAM********************************---------->
  <h2>Database Fundamentals Mock Exam</h2>
-    <asp:Label ID="lblShowResult" runat="server" Text="" CssClass="displayResult"></asp:Label>
     <p>
             1) Which of the following is not a DDL statment
             <asp:RadioButtonList ID="rdMock1" runat="server">
@@ -779,7 +774,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ControlToValidate="rdMock20" Display="Dynamic" ErrorMessage="Select an answer" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
 
-            <asp:Button ID="btnMockExam1" runat="server" Text="Submit Answers" OnClick="btnMockExam1_Click" />
+            <asp:Button CommandName="NextView" ID="btnMockExam1" runat="server" Text="Submit Answers" OnClick="btnMockExam1_Click" />
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="placeholderTabFour" runat="server">
 

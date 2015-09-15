@@ -245,7 +245,7 @@ GO
 --------------------------------------------------------------------------------------------MockExamResultLog
 CREATE TABLE MockExamResultLog
 (
-MockExamResultLogID VARCHAR(25) PRIMARY KEY,
+MockExamResultLogID NT IDENTITY(100,1) PRIMARY KEY,
 MockExamDate DATETIME NOT NULL,
 MockExamResult INT NOT NULL,
 StudentCourseID INT FOREIGN KEY REFERENCES StudentCourse (StudentCourseID),
@@ -254,14 +254,14 @@ GO
 
 --Stored procedure for inserting MockExamResultLog
 --When a studnet click a button to SUBMIT after taking a mockexam
-CREATE PROCEDURE spInsertMockExamReulst
-@id VARCHAR(25),
+CREATE PROCEDURE spInsertMockExamResult
 @result INT,
 @studentCourseID INT
 AS
 BEGIN
 	INSERT INTO MockExamResultLog
-	(MockExamResultLogID,MockExamDate,MockExamResult,StudentCourseID)
-	VALUES(@id,GETDATE(),@result,@studentCourseID)
+	(MockExamDate,MockExamResult,StudentCourseID)
+	VALUES(GETDATE(),@result,@studentCourseID)
 END
+
 GO
