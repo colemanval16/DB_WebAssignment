@@ -23,8 +23,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-       <div id="wrapper" class="container-fluid">
-           <div id="nav_bg" class="container">
+        <div id="wrapper" class="container-fluid">
+            <div id="nav_bg" class="container">
           <div class="container">
             <div class="navbar-wrapper">
               <%--<nav class="navbar navbar-inverse navbar-static-top"> --%>
@@ -117,33 +117,31 @@
             </div> <!-- end of div "navbar-wrapper" -->
           </div> <!-- end of navbar CONTAINER -->
         </div> 
-          <div class="slider">
+            <div class="slider">
               <asp:ContentPlaceHolder ID="Slider" runat="server">
                   <!-- Editable content of the slider/progress bar -->
               </asp:ContentPlaceHolder>
           </div>
-          <div id="content" class="container-fluid">
-              <asp:ContentPlaceHolder ID="mainContent" runat="server">
-                  <!-- Editable content of the page main content -->
-              </asp:ContentPlaceHolder>
-        
-            <footer>
-                
-                <nav>
-				    <ul>
-					    <li><a href="https://twitter.com/DBScollege"><img src="images/twitter20.png" alt="Twitter" ></a></li>
-					    <li><a href="http://www.linkedin.com/company/dublin-business-school"><img src="images/linkedIn11.png" alt="LinkedIn" ></a></li>
-					    <li><a href="https://www.facebook.com/DublinBusinessSchool"><img src="images/facebook31.png" alt="Facebook" ></a></li>
-                        <li><a href="https://www.youtube.com/"><img src="images/youtube18.png" alt="Youtube" ></a></li>
-				    </ul>
-                    <p>Toodle DBS &copy; 2015 All Rights Reserved</p>
-			    </nav>
-                <p></p>
-             </footer> 
-          </div> <!-- end of "content container" -->
+            <div id="content" class="container-fluid">
+                <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    <!-- Editable content of the page main content -->
+                </asp:ContentPlaceHolder>
+                <footer>              
+                    <nav>
+			            <ul>
+				            <li><a href="https://twitter.com/DBScollege"><img src="images/twitter20.png" alt="Twitter" ></a></li>
+				            <li><a href="http://www.linkedin.com/company/dublin-business-school"><img src="images/linkedIn11.png" alt="LinkedIn" ></a></li>
+				            <li><a href="https://www.facebook.com/DublinBusinessSchool"><img src="images/facebook31.png" alt="Facebook" ></a></li>
+                            <li><a href="https://www.youtube.com/"><img src="images/youtube18.png" alt="Youtube" ></a></li>
+			            </ul>
+                        <p>Toodle DBS &copy; 2015 All Rights Reserved</p>
+		            </nav>
+                    <p></p>
+                </footer>  
+            </div> <!-- end of "content container" -->
+ 
        </div> <!-- end of wrapper/main "container" -->
     </form>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

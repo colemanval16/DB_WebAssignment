@@ -42,6 +42,17 @@ a:hover, a:active, a:focus {
     left:               0%;
     z-index:            10;
 }
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
 ul.dropdown-menu>li>ul>li>ul {
     display:            none; 
 }   
@@ -83,16 +94,18 @@ ul li a.highlighted{
 }
 #tabbedMenu {
     margin-top:         50px;
-    width:              26%;
-    max-width:          240px;
+    width:              100%;
     min-width:          206px;
     float:              left;
+    text-align:         center;
 }
 #multiTabs{
+    float:              left;
     min-height:         500px; 
     background-color:   #8CF26D;
     padding:            4%;
     border-radius:      0px 4px 0px 0px;
+    width:              100%;
 }
 
 /* --------------- CONTENT- NESTED TABBED PANEL --------------- */
@@ -121,15 +134,21 @@ ul li a.highlighted{
      color:             white;
 }
 #nestedMultiTabs {
-    width:              71%;
     float:              left;
     padding:            10px 30px;
     background:         #5CA85C;
-    color:              white;
-    margin-top:         50px;
+    color:              white;    
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
+}
+#mainContent_placeholderTabOne_btnCourseContentComplete, #mainContent_placeholderTabThree_btnMockExam1, #mainContent_placeholderTabTwo_btnTutorialsComplete {
+    float:              right;
+    margin-top:         26px;
+    background:         #5CA85B;
+    padding:            5px;
+    border-radius:      4px;
+    color:              white;
 }
 
 /* --------------- FOOTER --------------- */
@@ -137,7 +156,7 @@ ul li a.highlighted{
 footer {
     background-color:   rgb(16,16,16);
     text-align:         center;
-    margin-top:         20px;
+    clear:              both;
 }
 
 footer ul {
@@ -156,6 +175,9 @@ footer li{
     background:         #F2F3E7;
     padding-top:        100px;
 }
+#contactsContainer .row .col-sm-6{
+    margin-bottom: 40px !important;
+}
 #contactForm {
     padding-left:       5%;
     margin-bottom:      50px;
@@ -165,20 +187,19 @@ footer li{
 }
 #mainContent_UpdatePanel1 {
     border:             1px solid #808080;
-    padding-left:       15%;
+    padding-left:       27%;
     padding-top:        35px;
+    margin-right:       3%;
 }
 #locationmap {
     height:             500px; 
     width:              92%;
-    margin-right:       4%;
     margin-bottom:      40px;
     border: 1px solid #808080;
 }
-
 #mainContent_btnSubmit {
     float:              right;
-    margin-right:       7%;
+    margin-right:       50%;
 }
 #mainContent_btnClear {
     float:              right;
@@ -209,11 +230,8 @@ footer li{
 footer {
     border-radius:      0px 0px 4px 4px;
     padding:            5px 0px;
-    } 
 }
-
-
-
+}
 /* Medium devices, 992px and up */
 @media (min-width: 992px) {
 
@@ -224,7 +242,30 @@ footer {
     right:              5%;
     left:               5%;
 }
-
+#tabbedMenu {
+    width:              26%;
+    max-width:          240px;
+    text-align:         left;
+}
+#nestedMultiTabs {
+    width:              71%;
+    margin-top:         50px;
+}
+#mainContent_UpdatePanel1 {
+    margin-right:       0%;
+}
+#contactsContainer .row .col-sm-6{
+    margin-bottom: 0px !important;
+}
+#mainContent_UpdatePanel1 {
+    padding-left:       13%;
+}
+#mainContent_btnSubmit {
+    margin-right:       7%;
+}
+#locationmap {
+    margin-right:       4%;
+}
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -239,5 +280,8 @@ footer {
 }
 #progressBarPlaceholder {
     height: 300px;
+}
+#mainContent_UpdatePanel1 {
+    padding-left:       15%;
 }
 }
